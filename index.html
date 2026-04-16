@@ -3,39 +3,41 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Avoid the Nuts — Ingredient Checker</title>
+<title>Nutsy Nope — Ingredient Checker</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Lora:ital,wght@0,600;1,400&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --bg: #FAF7F2;
-    --surface: #FFFFFF;
-    --surface2: #F4F0E8;
-    --border: #E2DDD4;
-    --text: #1A1714;
-    --text2: #6B6560;
-    --text3: #A8A29B;
-    --accent: #C4420A;
-    --accent-light: #FAEEE8;
-    --accent-dark: #8B2E05;
-    --danger-bg: #FDF1EE;
-    --danger-border: #E8A090;
-    --danger-text: #7A1F0A;
-    --warn-bg: #FDF6E8;
-    --warn-border: #E8C870;
-    --warn-text: #6B4A08;
-    --safe-bg: #EEF6E8;
-    --safe-border: #90C870;
-    --safe-text: #2A5E0A;
-    --rare-bg: #F2F0EC;
-    --rare-border: #C8C0B0;
-    --rare-text: #4A4540;
+    --bg:           #EEF6FB;
+    --bg2:          #DFF0F9;
+    --surface:      #FFFFFF;
+    --surface2:     #F0F8FD;
+    --border:       #C4DFF0;
+    --border2:      #A8CFEA;
+    --text:         #1A3344;
+    --text2:        #4A6E85;
+    --text3:        #8AADC2;
+    --accent:       #1A8FBF;
+    --accent-hover: #136E96;
+    --accent-light: #D6EEF8;
+    --danger-bg:    #FEF0EE;
+    --danger-bdr:   #F0A898;
+    --danger-txt:   #8B2010;
+    --warn-bg:      #FEF8EA;
+    --warn-bdr:     #EDD080;
+    --warn-txt:     #6B4A08;
+    --safe-bg:      #EDFBF2;
+    --safe-bdr:     #80D4A0;
+    --safe-txt:     #0A5E2A;
+    --rare-bg:      #F2F6FA;
+    --rare-bdr:     #B0C8DC;
+    --rare-txt:     #3A5570;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
@@ -44,90 +46,53 @@
 
   /* ── Header ── */
   .site-header {
-    background: var(--text);
-    color: #FAF7F2;
-    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, #1A8FBF 0%, #1570A0 100%);
+    padding: 1.75rem 2rem 1.5rem;
     display: flex;
-    align-items: baseline;
-    gap: 1rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(26,111,159,0.18);
   }
   .site-logo {
     font-family: 'Lora', serif;
-    font-size: 1.75rem;
+    font-size: 2.25rem;
     font-weight: 600;
-    letter-spacing: -0.02em;
-    color: #FAF7F2;
+    color: #fff;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
   }
-  .site-logo em { color: var(--accent); font-style: normal; }
+  .site-logo em {
+    font-style: italic;
+    color: #B8E4F5;
+  }
   .site-tagline {
-    font-size: 0.75rem;
-    font-weight: 300;
-    color: #A8A29B;
-    letter-spacing: 0.08em;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0.07em;
     text-transform: uppercase;
   }
 
   /* ── Layout ── */
   .container {
-    max-width: 740px;
+    max-width: 720px;
     margin: 0 auto;
     padding: 2rem 1.25rem;
   }
 
-  /* ── API Key Banner ── */
-  #api-banner {
-    background: var(--text);
-    color: #FAF7F2;
-    padding: 1rem 1.25rem;
-    display: flex;
-    gap: 0.75rem;
-    align-items: center;
-    flex-wrap: wrap;
-    font-size: 0.8125rem;
-  }
-  #api-banner span { flex: 1; min-width: 200px; color: #C8C4BC; }
-  #api-banner strong { color: #FAF7F2; }
-  .api-row { display: flex; gap: 8px; flex: 2; min-width: 260px; }
-  .api-row input {
-    flex: 1;
-    padding: 7px 12px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.8125rem;
-    border: 1px solid #444;
-    border-radius: 6px;
-    background: #2A2622;
-    color: #FAF7F2;
-    outline: none;
-    letter-spacing: 0.04em;
-  }
-  .api-row input:focus { border-color: var(--accent); }
-  .btn-save-key {
-    padding: 7px 16px;
-    background: var(--accent);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.8125rem;
-    font-weight: 500;
-    cursor: pointer;
-    white-space: nowrap;
-  }
-  .btn-save-key:hover { background: var(--accent-dark); }
-  .key-saved { color: var(--safe-text) !important; font-weight: 500; }
-
-  /* ── Card ── */
+  /* ── Cards ── */
   .card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: 16px;
     padding: 1.5rem;
     margin-bottom: 1.25rem;
+    box-shadow: 0 2px 8px rgba(26,111,159,0.06);
   }
   .card-title {
     font-size: 0.6875rem;
-    font-weight: 500;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--text3);
@@ -138,29 +103,33 @@
   .input-row { display: flex; gap: 8px; margin-bottom: 0.875rem; }
   .input-row input {
     flex: 1;
-    padding: 9px 14px;
-    font-family: 'DM Sans', sans-serif;
+    padding: 10px 14px;
+    font-family: 'Nunito', sans-serif;
     font-size: 0.9375rem;
-    border: 1px solid var(--border);
-    border-radius: 8px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
     background: var(--surface2);
     color: var(--text);
     outline: none;
+    transition: border-color 0.15s, background 0.15s;
   }
   .input-row input:focus { border-color: var(--accent); background: #fff; }
   .input-row input::placeholder { color: var(--text3); }
+
   .btn-add {
-    padding: 9px 20px;
+    padding: 10px 22px;
     background: var(--accent);
     color: white;
     border: none;
-    border-radius: 8px;
-    font-family: 'DM Sans', sans-serif;
+    border-radius: 10px;
+    font-family: 'Nunito', sans-serif;
     font-size: 0.9375rem;
-    font-weight: 500;
+    font-weight: 700;
     cursor: pointer;
+    transition: background 0.15s;
+    white-space: nowrap;
   }
-  .btn-add:hover { background: var(--accent-dark); }
+  .btn-add:hover { background: var(--accent-hover); }
 
   .tags { display: flex; flex-wrap: wrap; gap: 7px; min-height: 28px; align-items: center; }
   .tag {
@@ -168,164 +137,208 @@
     align-items: center;
     gap: 5px;
     background: var(--accent-light);
-    color: var(--accent-dark);
-    border: 1px solid #E8B8A0;
+    color: var(--accent-hover);
+    border: 1px solid var(--border2);
     border-radius: 20px;
-    padding: 4px 10px 4px 13px;
+    padding: 4px 10px 4px 14px;
     font-size: 0.8125rem;
-    font-weight: 500;
+    font-weight: 600;
   }
   .tag button {
     background: none; border: none; cursor: pointer;
-    color: var(--accent); font-size: 1rem; line-height: 1; padding: 0 2px;
-    display: flex; align-items: center;
+    color: var(--accent); font-size: 1.1rem; line-height: 1;
+    padding: 0 2px; display: flex; align-items: center;
+    transition: color 0.1s;
   }
-  .tag button:hover { color: var(--accent-dark); }
+  .tag button:hover { color: var(--accent-hover); }
   .empty-hint { font-size: 0.8125rem; color: var(--text3); font-style: italic; }
 
-  /* ── Tabs ── */
-  .tabs { display: flex; gap: 4px; margin-bottom: 1.25rem; background: var(--surface2); padding: 4px; border-radius: 10px; }
-  .tab {
-    flex: 1; padding: 9px 8px; border: none; border-radius: 7px;
-    font-family: 'DM Sans', sans-serif; font-size: 0.875rem; font-weight: 500;
-    cursor: pointer; background: transparent; color: var(--text2);
-    transition: all 0.15s;
+  /* ── Search ── */
+  .search-wrap { position: relative; margin-bottom: 0.875rem; }
+  .search-wrap input {
+    width: 100%;
+    padding: 11px 42px 11px 16px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9375rem;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface2);
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.15s, background 0.15s;
   }
-  .tab.active { background: var(--surface); color: var(--text); border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-  .panel { display: none; }
-  .panel.active { display: block; }
+  .search-wrap input:focus { border-color: var(--accent); background: #fff; }
+  .search-wrap input::placeholder { color: var(--text3); }
+  .search-icon {
+    position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+    color: var(--text3); pointer-events: none; font-size: 1rem;
+  }
 
-  .food-input {
-    width: 100%; padding: 10px 14px;
-    font-family: 'DM Sans', sans-serif; font-size: 0.9375rem;
-    border: 1px solid var(--border); border-radius: 8px;
-    background: var(--surface2); color: var(--text); outline: none;
-    margin-bottom: 0.875rem;
+  /* Autocomplete dropdown */
+  .autocomplete-list {
+    position: absolute; top: 100%; left: 0; right: 0; z-index: 100;
+    background: var(--surface); border: 1.5px solid var(--border2);
+    border-top: none; border-radius: 0 0 10px 10px;
+    max-height: 220px; overflow-y: auto;
+    box-shadow: 0 6px 18px rgba(26,111,159,0.12);
+    display: none;
   }
-  .food-input:focus { border-color: var(--accent); background: #fff; }
-  .food-input::placeholder { color: var(--text3); }
+  .autocomplete-list.open { display: block; }
+  .ac-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 14px; cursor: pointer;
+    font-size: 0.875rem; color: var(--text);
+    transition: background 0.1s;
+    border-bottom: 1px solid var(--bg2);
+  }
+  .ac-item:last-child { border-bottom: none; }
+  .ac-item:hover, .ac-item.focused { background: var(--accent-light); }
+  .ac-thumb {
+    width: 36px; height: 36px; border-radius: 6px;
+    object-fit: cover; flex-shrink: 0;
+    background: var(--bg2);
+  }
+  .ac-name { font-weight: 600; }
+  .ac-loading { padding: 10px 14px; font-size: 0.8125rem; color: var(--text3); font-style: italic; }
 
   .btn-analyze {
     width: 100%; padding: 12px;
-    background: var(--accent); color: white; border: none; border-radius: 8px;
-    font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 500;
+    background: var(--accent); color: white; border: none; border-radius: 10px;
+    font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 700;
     cursor: pointer; letter-spacing: 0.01em;
-    transition: background 0.15s;
+    transition: background 0.15s, transform 0.1s;
   }
-  .btn-analyze:hover { background: var(--accent-dark); }
-  .btn-analyze:disabled { background: var(--border); color: var(--text3); cursor: not-allowed; }
+  .btn-analyze:hover { background: var(--accent-hover); }
+  .btn-analyze:active { transform: scale(0.99); }
+  .btn-analyze:disabled { background: var(--border); color: var(--text3); cursor: not-allowed; transform: none; }
 
   /* ── Loading ── */
   .loading-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 2rem 1.5rem;
-    text-align: center;
-    margin-bottom: 1.25rem;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; padding: 2.5rem 1.5rem;
+    text-align: center; margin-bottom: 1.25rem;
+    box-shadow: 0 2px 8px rgba(26,111,159,0.06);
   }
-  .loading-dots { display: flex; justify-content: center; gap: 6px; margin-bottom: 1rem; }
+  .loading-dots { display: flex; justify-content: center; gap: 7px; margin-bottom: 1rem; }
   .loading-dots span {
-    width: 8px; height: 8px; border-radius: 50%;
+    width: 10px; height: 10px; border-radius: 50%;
     background: var(--accent); opacity: 0.3;
     animation: pulse 1.2s ease-in-out infinite;
   }
   .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
   .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
-  @keyframes pulse { 0%,100%{opacity:0.3;transform:scale(0.8)} 50%{opacity:1;transform:scale(1)} }
-  .loading-title { font-family: 'Lora', serif; font-size: 1.1rem; color: var(--text); margin-bottom: 0.375rem; }
+  @keyframes pulse { 0%,100%{opacity:0.25;transform:scale(0.75)} 50%{opacity:1;transform:scale(1)} }
+  .loading-title { font-family: 'Lora', serif; font-size: 1.2rem; color: var(--text); margin-bottom: 4px; }
   .loading-sub { font-size: 0.8125rem; color: var(--text2); }
 
   /* ── Results ── */
-  .result-header { margin-bottom: 1.25rem; }
-  .result-name { font-family: 'Lora', serif; font-size: 1.6rem; font-weight: 600; color: var(--text); margin-bottom: 4px; }
-  .result-desc { font-size: 0.875rem; color: var(--text2); line-height: 1.5; }
-  .result-meta { font-size: 0.75rem; color: var(--text3); margin-top: 6px; }
+  .result-thumb {
+    width: 100%; max-height: 220px; object-fit: cover;
+    border-radius: 10px; margin-bottom: 1.25rem; display: block;
+  }
+  .result-name {
+    font-family: 'Lora', serif; font-size: 1.65rem;
+    font-weight: 600; color: var(--text); margin-bottom: 4px;
+  }
+  .result-desc { font-size: 0.875rem; color: var(--text2); line-height: 1.55; margin-bottom: 6px; }
+  .result-meta { font-size: 0.75rem; color: var(--text3); }
   .result-meta a { color: var(--accent); text-decoration: none; }
   .result-meta a:hover { text-decoration: underline; }
 
+  /* ── Alert boxes ── */
   .alert-box { border-radius: 10px; padding: 1rem 1.125rem; margin-bottom: 0.875rem; }
   .alert-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
-  .alert-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-  .alert-label { font-size: 0.6875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; }
+  .alert-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+  .alert-label { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
   .chips { display: flex; flex-wrap: wrap; gap: 6px; }
-  .chip { font-size: 0.8125rem; font-weight: 500; padding: 4px 11px; border-radius: 20px; }
+  .chip { font-size: 0.8125rem; font-weight: 600; padding: 4px 12px; border-radius: 20px; }
 
-  .alert-danger { background: var(--danger-bg); border: 1px solid var(--danger-border); }
-  .alert-danger .alert-dot { background: #D64030; }
-  .alert-danger .alert-label { color: var(--danger-text); }
-  .chip-danger { background: #F5C4B8; color: var(--danger-text); }
+  .alert-danger { background: var(--danger-bg); border: 1px solid var(--danger-bdr); }
+  .alert-danger .alert-label { color: var(--danger-txt); }
+  .chip-danger { background: #FACFC8; color: var(--danger-txt); }
 
-  .alert-warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
-  .alert-warn .alert-dot { background: #C89830; }
-  .alert-warn .alert-label { color: var(--warn-text); }
-  .chip-warn { background: #F5DFA0; color: var(--warn-text); }
+  .alert-warn { background: var(--warn-bg); border: 1px solid var(--warn-bdr); }
+  .alert-warn .alert-label { color: var(--warn-txt); }
+  .chip-warn { background: #F8E8A8; color: var(--warn-txt); }
 
-  .alert-safe { background: var(--safe-bg); border: 1px solid var(--safe-border); }
-  .alert-safe .alert-dot { background: #60A840; }
-  .alert-safe .alert-label { color: var(--safe-text); }
+  .alert-safe { background: var(--safe-bg); border: 1px solid var(--safe-bdr); }
+  .alert-safe .alert-label { color: var(--safe-txt); }
 
-  .alert-rare { background: var(--rare-bg); border: 1px solid var(--rare-border); }
-  .alert-rare .alert-dot { background: #908880; }
-  .alert-rare .alert-label { color: var(--rare-text); }
-  .chip-rare { background: #DDD8D0; color: var(--rare-text); }
+  .alert-rare { background: var(--rare-bg); border: 1px solid var(--rare-bdr); }
+  .alert-rare .alert-label { color: var(--rare-txt); }
+  .chip-rare { background: #C8DCE8; color: var(--rare-txt); }
 
-  /* ── Ingredient grid ── */
+  /* ── Ingredient list ── */
   .ing-toggle {
     font-size: 0.8125rem; color: var(--accent); background: none; border: none;
-    cursor: pointer; font-family: 'DM Sans', sans-serif; font-weight: 500;
-    padding: 0; margin-top: 1rem; display: flex; align-items: center; gap: 5px;
+    cursor: pointer; font-family: 'Nunito', sans-serif; font-weight: 600;
+    padding: 0; margin-top: 1rem; display: inline-flex; align-items: center; gap: 5px;
   }
-  .ing-toggle:hover { color: var(--accent-dark); }
-  .ing-grid { display: none; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 1rem; }
-  .ing-grid.open { display: grid; }
-  .ing-col-title { font-size: 0.6875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text3); margin-bottom: 6px; }
-  .ing-item { font-size: 0.8125rem; color: var(--text2); padding: 4px 0; border-bottom: 1px solid var(--surface2); line-height: 1.4; }
-  .ing-item.flagged { color: var(--accent-dark); font-weight: 500; }
+  .ing-toggle:hover { color: var(--accent-hover); }
+
+  .ing-section { display: none; margin-top: 1rem; }
+  .ing-section.open { display: block; }
+  .ing-group { margin-bottom: 1rem; }
+  .ing-col-title {
+    font-size: 0.6875rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--text3); margin-bottom: 6px;
+    padding-bottom: 4px; border-bottom: 1.5px solid var(--bg2);
+  }
+  .ing-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .ing-chip {
+    font-size: 0.8125rem; padding: 3px 11px; border-radius: 20px;
+    background: var(--surface2); border: 1px solid var(--border);
+    color: var(--text2); font-weight: 500;
+  }
+  .ing-chip.flagged {
+    background: #FFE8E4; border-color: var(--danger-bdr);
+    color: var(--danger-txt); font-weight: 700;
+  }
+
+  /* ── Not found ── */
+  .not-found-box {
+    background: var(--warn-bg); border: 1px solid var(--warn-bdr);
+    border-radius: 10px; padding: 1rem 1.125rem;
+    font-size: 0.875rem; color: var(--warn-txt); margin-bottom: 1rem;
+    line-height: 1.5;
+  }
 
   /* ── Disclaimer ── */
   .disclaimer {
     margin-top: 1rem; padding: 0.875rem 1rem;
-    background: var(--surface2); border-radius: 8px;
-    border-left: 3px solid #C8A840;
+    background: var(--bg2); border-radius: 10px;
+    border-left: 3px solid var(--accent);
     font-size: 0.75rem; color: var(--text2); line-height: 1.6;
   }
   .disclaimer strong { color: var(--text); }
 
   /* ── Buttons ── */
   .btn-secondary {
-    margin-top: 1rem; padding: 8px 18px;
-    background: transparent; border: 1px solid var(--accent);
-    color: var(--accent); border-radius: 8px;
-    font-family: 'DM Sans', sans-serif; font-size: 0.875rem; font-weight: 500;
-    cursor: pointer;
+    margin-top: 1rem; padding: 9px 20px;
+    background: transparent; border: 1.5px solid var(--accent);
+    color: var(--accent); border-radius: 10px;
+    font-family: 'Nunito', sans-serif; font-size: 0.875rem; font-weight: 700;
+    cursor: pointer; transition: background 0.15s;
   }
   .btn-secondary:hover { background: var(--accent-light); }
 
   /* ── History ── */
   .hist-item {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 10px 14px; background: var(--surface2); border-radius: 8px;
-    cursor: pointer; border: 1px solid transparent; margin-bottom: 8px;
-    transition: border-color 0.15s;
+    padding: 10px 14px; background: var(--surface2); border-radius: 10px;
+    cursor: pointer; border: 1.5px solid transparent; margin-bottom: 8px;
+    transition: border-color 0.15s, background 0.15s;
   }
-  .hist-item:hover { border-color: var(--border); background: var(--surface); }
-  .hist-name { font-size: 0.9375rem; font-weight: 500; color: var(--text); }
-  .hist-flag { font-size: 0.75rem; font-weight: 500; color: var(--accent-dark); }
-  .hist-safe { font-size: 0.75rem; font-weight: 500; color: var(--safe-text); }
-
-  /* ── Not found ── */
-  .not-found {
-    background: var(--warn-bg); border: 1px solid var(--warn-border);
-    border-radius: 10px; padding: 1rem 1.125rem;
-    font-size: 0.875rem; color: var(--warn-text); margin-bottom: 0.875rem;
-  }
+  .hist-item:hover { border-color: var(--border2); background: var(--surface); }
+  .hist-name { font-size: 0.9375rem; font-weight: 600; color: var(--text); }
+  .hist-flag { font-size: 0.75rem; font-weight: 700; color: var(--danger-txt); }
+  .hist-safe { font-size: 0.75rem; font-weight: 700; color: var(--safe-txt); }
 
   /* ── Error ── */
   .error-box {
-    background: var(--danger-bg); border: 1px solid var(--danger-border);
+    background: var(--danger-bg); border: 1px solid var(--danger-bdr);
     border-radius: 10px; padding: 1rem 1.125rem;
-    font-size: 0.875rem; color: var(--danger-text);
+    font-size: 0.875rem; color: var(--danger-txt);
   }
 
   /* ── Footer ── */
@@ -333,10 +346,11 @@
     text-align: center; padding: 2rem 1rem 1rem;
     font-size: 0.75rem; color: var(--text3);
   }
+  .site-footer a { color: var(--accent); text-decoration: none; }
+  .site-footer a:hover { text-decoration: underline; }
 
   @media (max-width: 520px) {
-    .ing-grid.open { grid-template-columns: 1fr 1fr; }
-    .site-header { padding: 1.25rem; }
+    .site-logo { font-size: 1.75rem; }
     .container { padding: 1.25rem 1rem; }
   }
 </style>
@@ -344,24 +358,17 @@
 <body>
 
 <header class="site-header">
-  <div class="site-logo">Avoid the <em>Nuts</em></div>
-  <div class="site-tagline">ingredient checker — not a medical tool</div>
+  <div class="site-logo">Nutsy <em>Nope</em></div>
+  <div class="site-tagline">ingredient checker &mdash; not a medical tool</div>
 </header>
-
-<div id="api-banner">
-  <span><strong>Anthropic API key required.</strong> Your key is stored locally in your browser only.</span>
-  <div class="api-row">
-    <input type="password" id="api-key-input" placeholder="sk-ant-..." autocomplete="off" />
-    <button class="btn-save-key" id="save-key-btn">Save key</button>
-  </div>
-</div>
 
 <div class="container">
 
+  <!-- Avoid list -->
   <div class="card">
     <div class="card-title">Ingredients to avoid</div>
     <div class="input-row">
-      <input type="text" id="avoid-input" placeholder="e.g. peanuts, gluten, dairy…" />
+      <input type="text" id="avoid-input" placeholder="e.g. peanuts, gluten, dairy… (comma-separate multiple)" />
       <button class="btn-add" id="add-btn">Add</button>
     </div>
     <div class="tags" id="tags-container">
@@ -369,26 +376,20 @@
     </div>
   </div>
 
+  <!-- Search -->
   <div class="card">
-    <div class="card-title">Check a food</div>
-    <div class="tabs">
-      <button class="tab active" id="tab-name-btn">Dish name</button>
-      <button class="tab" id="tab-menu-btn">Menu / recipe text</button>
+    <div class="card-title">Check a dish</div>
+    <div class="search-wrap">
+      <input type="text" id="food-search" placeholder="Start typing a dish name…" autocomplete="off" />
+      <span class="search-icon">&#128269;</span>
+      <div class="autocomplete-list" id="ac-list"></div>
     </div>
-
-    <div class="panel active" id="panel-name">
-      <input type="text" class="food-input" id="food-name-input" placeholder="e.g. Pad Thai, Waldorf Salad, Tiramisu…" />
-      <button class="btn-analyze" id="analyze-name-btn">Analyze ingredients</button>
-    </div>
-
-    <div class="panel" id="panel-menu">
-      <textarea class="food-input" id="menu-text-input" rows="4" placeholder="Paste a menu item description or recipe ingredients list here…" style="resize:vertical;"></textarea>
-      <button class="btn-analyze" id="analyze-menu-btn">Analyze text</button>
-    </div>
+    <button class="btn-analyze" id="analyze-btn" disabled>Select a dish above to analyze</button>
   </div>
 
   <div id="results-container"></div>
 
+  <!-- History -->
   <div class="card" id="history-card" style="display:none;">
     <div class="card-title">Recent checks</div>
     <div id="history-list"></div>
@@ -397,48 +398,24 @@
 </div>
 
 <footer class="site-footer">
-  Recipe data from <a href="https://www.themealdb.com/" target="_blank" style="color:var(--accent);text-decoration:none;">TheMealDB</a>.
-  Analysis by <a href="https://www.anthropic.com/" target="_blank" style="color:var(--accent);text-decoration:none;">Claude</a>.
-  This tool is not a substitute for medical advice.
+  Recipe data from <a href="https://www.themealdb.com/" target="_blank">TheMealDB</a>.
+  This tool is not a substitute for medical advice — always verify with the food preparer.
 </footer>
 
 <script>
-// ─── State ───────────────────────────────────────────────
+// ── State ─────────────────────────────────────────────────
 var avoidList = [];
 var searchHistory = [];
-var API_KEY = '';
+var selectedMeal = null;   // { idMeal, strMeal, strMealThumb }
+var acTimeout = null;
 
-// ─── Init ─────────────────────────────────────────────────
+// ── Init ──────────────────────────────────────────────────
 (function init() {
-  var saved = localStorage.getItem('atn_api_key');
-  if (saved) {
-    API_KEY = saved;
-    document.getElementById('api-key-input').value = saved;
-    setKeyStatus(true);
-  }
-  var savedAvoid = localStorage.getItem('atn_avoid_list');
-  if (savedAvoid) {
-    try { avoidList = JSON.parse(savedAvoid); renderTags(); } catch(e){}
-  }
+  var saved = localStorage.getItem('nn_avoid_list');
+  if (saved) { try { avoidList = JSON.parse(saved); renderTags(); } catch(e){} }
 })();
 
-// ─── API Key ──────────────────────────────────────────────
-document.getElementById('save-key-btn').addEventListener('click', function() {
-  var val = document.getElementById('api-key-input').value.trim();
-  if (!val) { alert('Please enter your Anthropic API key.'); return; }
-  API_KEY = val;
-  localStorage.setItem('atn_api_key', val);
-  setKeyStatus(true);
-});
-
-function setKeyStatus(saved) {
-  var banner = document.getElementById('api-banner');
-  if (saved) {
-    banner.querySelector('span').innerHTML = '<strong class="key-saved">✓ API key saved.</strong> <span style="color:#A8A29B;">Clear browser storage to remove it.</span>';
-  }
-}
-
-// ─── Avoid list ───────────────────────────────────────────
+// ── Avoid list ────────────────────────────────────────────
 document.getElementById('add-btn').addEventListener('click', addAvoidItem);
 document.getElementById('avoid-input').addEventListener('keydown', function(e) {
   if (e.key === 'Enter') addAvoidItem();
@@ -454,21 +431,18 @@ function addAvoidItem() {
   });
   input.value = '';
   renderTags();
-  localStorage.setItem('atn_avoid_list', JSON.stringify(avoidList));
+  localStorage.setItem('nn_avoid_list', JSON.stringify(avoidList));
 }
 
 function removeTag(item) {
   avoidList = avoidList.filter(function(i) { return i !== item; });
   renderTags();
-  localStorage.setItem('atn_avoid_list', JSON.stringify(avoidList));
+  localStorage.setItem('nn_avoid_list', JSON.stringify(avoidList));
 }
 
 function renderTags() {
   var c = document.getElementById('tags-container');
-  if (!avoidList.length) {
-    c.innerHTML = '<span class="empty-hint">No ingredients added yet</span>';
-    return;
-  }
+  if (!avoidList.length) { c.innerHTML = '<span class="empty-hint">No ingredients added yet</span>'; return; }
   c.innerHTML = '';
   avoidList.forEach(function(item) {
     var span = document.createElement('span');
@@ -483,249 +457,256 @@ function renderTags() {
   });
 }
 
-// ─── Tabs ─────────────────────────────────────────────────
-document.getElementById('tab-name-btn').addEventListener('click', function() { switchTab('name'); });
-document.getElementById('tab-menu-btn').addEventListener('click', function() { switchTab('menu'); });
+// ── Autocomplete ──────────────────────────────────────────
+var foodSearch = document.getElementById('food-search');
+var acList = document.getElementById('ac-list');
+var acFocusIndex = -1;
 
-function switchTab(tab) {
-  document.getElementById('tab-name-btn').classList.toggle('active', tab === 'name');
-  document.getElementById('tab-menu-btn').classList.toggle('active', tab === 'menu');
-  document.getElementById('panel-name').classList.toggle('active', tab === 'name');
-  document.getElementById('panel-menu').classList.toggle('active', tab === 'menu');
+foodSearch.addEventListener('input', function() {
+  var q = this.value.trim();
+  selectedMeal = null;
+  setAnalyzeBtn(false);
+  clearTimeout(acTimeout);
+  if (q.length < 2) { closeAC(); return; }
+  acTimeout = setTimeout(function() { fetchSuggestions(q); }, 280);
+});
+
+foodSearch.addEventListener('keydown', function(e) {
+  var items = acList.querySelectorAll('.ac-item');
+  if (e.key === 'ArrowDown') { e.preventDefault(); acFocusIndex = Math.min(acFocusIndex + 1, items.length - 1); highlightAC(items); }
+  else if (e.key === 'ArrowUp') { e.preventDefault(); acFocusIndex = Math.max(acFocusIndex - 1, 0); highlightAC(items); }
+  else if (e.key === 'Enter') { if (acFocusIndex >= 0 && items[acFocusIndex]) items[acFocusIndex].click(); }
+  else if (e.key === 'Escape') { closeAC(); }
+});
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.search-wrap')) closeAC();
+});
+
+function highlightAC(items) {
+  items.forEach(function(it, i) { it.classList.toggle('focused', i === acFocusIndex); });
+  if (items[acFocusIndex]) items[acFocusIndex].scrollIntoView({ block: 'nearest' });
 }
 
-// ─── Analyze buttons ──────────────────────────────────────
-document.getElementById('analyze-name-btn').addEventListener('click', function() { startAnalysis('name'); });
-document.getElementById('analyze-menu-btn').addEventListener('click', function() { startAnalysis('menu'); });
-
-// ─── Main flow ────────────────────────────────────────────
-function startAnalysis(mode) {
-  if (!API_KEY) { alert('Please enter and save your Anthropic API key first.'); return; }
-  if (!avoidList.length) { alert('Please add at least one ingredient to avoid.'); return; }
-
-  var food = '';
-  if (mode === 'name') {
-    food = document.getElementById('food-name-input').value.trim();
-    if (!food) { alert('Please enter a food or dish name.'); return; }
-  } else {
-    food = document.getElementById('menu-text-input').value.trim();
-    if (!food) { alert('Please paste some menu or recipe text.'); return; }
-  }
-
-  showLoading(food);
-
-  if (mode === 'name') {
-    searchMealDB(food);
-  } else {
-    // For menu text, skip MealDB and go straight to Claude with the raw text
-    analyzeWithClaude(null, food, food);
-  }
-}
-
-function showLoading(food) {
-  document.getElementById('results-container').innerHTML =
-    '<div class="loading-card">'
-    + '<div class="loading-dots"><span></span><span></span><span></span></div>'
-    + '<div class="loading-title">Checking ' + escHtml(food) + '&hellip;</div>'
-    + '<div class="loading-sub">Searching TheMealDB &amp; cross-referencing your avoid list</div>'
-    + '</div>';
-}
-
-// ─── TheMealDB ────────────────────────────────────────────
-function searchMealDB(foodName) {
-  var url = 'https://www.themealdb.com/api/json/v1/1/search.php?s=' + encodeURIComponent(foodName);
-  fetch(url)
+function fetchSuggestions(q) {
+  acList.innerHTML = '<div class="ac-loading">Searching…</div>';
+  acList.classList.add('open');
+  acFocusIndex = -1;
+  fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=' + encodeURIComponent(q))
     .then(function(r) { return r.json(); })
     .then(function(data) {
-      if (data.meals && data.meals.length > 0) {
-        var meal = data.meals[0];
-        var ingredients = extractMealDBIngredients(meal);
-        analyzeWithClaude(ingredients, meal.strMeal, foodName, meal.strMealThumb, meal.strSource);
-      } else {
-        // Not found in MealDB — fall back to Claude's knowledge
-        analyzeWithClaude(null, foodName, foodName);
+      if (!data.meals || !data.meals.length) {
+        acList.innerHTML = '<div class="ac-loading">No dishes found — try a different name</div>';
+        return;
       }
+      acList.innerHTML = '';
+      data.meals.slice(0, 8).forEach(function(meal) {
+        var div = document.createElement('div');
+        div.className = 'ac-item';
+        div.innerHTML = '<img class="ac-thumb" src="' + escHtml(meal.strMealThumb) + '/preview" alt="" loading="lazy" />'
+          + '<span class="ac-name">' + escHtml(meal.strMeal) + '</span>';
+        div.addEventListener('click', function() {
+          selectMeal(meal);
+        });
+        acList.appendChild(div);
+      });
+      acList.classList.add('open');
     })
-    .catch(function(err) {
-      // MealDB failed — fall back to Claude
-      analyzeWithClaude(null, foodName, foodName);
+    .catch(function() {
+      acList.innerHTML = '<div class="ac-loading">Could not reach TheMealDB — check your connection</div>';
     });
 }
 
-function extractMealDBIngredients(meal) {
-  var ingredients = [];
-  for (var i = 1; i <= 20; i++) {
-    var ing = meal['strIngredient' + i];
-    var measure = meal['strMeasure' + i];
-    if (ing && ing.trim()) {
-      var entry = ing.trim();
-      if (measure && measure.trim()) entry = measure.trim() + ' ' + entry;
-      ingredients.push(entry);
-    }
-  }
-  return ingredients;
+function selectMeal(meal) {
+  selectedMeal = meal;
+  foodSearch.value = meal.strMeal;
+  closeAC();
+  setAnalyzeBtn(true);
 }
 
-// ─── Claude API ───────────────────────────────────────────
-function analyzeWithClaude(ingredients, mealName, originalQuery, thumbUrl, sourceUrl) {
-  var avoidStr = avoidList.join(', ');
-  var prompt;
+function closeAC() {
+  acList.classList.remove('open');
+  acList.innerHTML = '';
+  acFocusIndex = -1;
+}
 
-  if (ingredients && ingredients.length > 0) {
-    prompt = 'A recipe for "' + mealName + '" has these ingredients from TheMealDB:\n'
-      + ingredients.join('\n') + '\n\n'
-      + 'The user wants to avoid: ' + avoidStr + '\n\n'
-      + 'Categorize these ingredients and check for avoided items. '
-      + 'Return ONLY this JSON object, no markdown, no other text:\n'
-      + '{"food_name":"' + mealName + '","description":"one sentence about the dish","always_used":["all ingredients listed above — list each one"],"sometimes_used":["common variants not in the listed recipe — 3 to 6 items"],"rarely_used":["uncommon variants — 2 to 4 items"],"flagged_always":["any avoided ingredient found in always_used — check carefully, e.g. if avoiding nuts check for any nut, if avoiding dairy check butter/cream/cheese/milk"],"flagged_sometimes":["any avoided ingredient found in sometimes_used"],"flagged_rarely":["any avoided ingredient found in rarely_used"],"safe":true}\n'
-      + 'safe must be false if any flagged array is non-empty. Return ONLY the JSON.';
-  } else {
-    prompt = 'Based on your knowledge of recipes from allrecipes.com and seriouseats.com, analyze "'
-      + originalQuery + '".\n'
-      + 'The user wants to avoid: ' + avoidStr + '\n\n'
-      + 'Return ONLY this JSON object, no markdown, no other text:\n'
-      + '{"food_name":"dish name","description":"one sentence about the dish","always_used":["5 to 10 ingredients in virtually every recipe"],"sometimes_used":["5 to 10 ingredients in many but not all recipes"],"rarely_used":["3 to 5 ingredients in occasional variants"],"flagged_always":["avoided items found in always_used"],"flagged_sometimes":["avoided items found in sometimes_used"],"flagged_rarely":["avoided items found in rarely_used"],"safe":true}\n'
-      + 'Flagging rules: if avoiding dairy flag butter/cream/cheese/milk; if avoiding gluten flag flour/soy sauce/breadcrumbs; if avoiding nuts flag any and all nut types. safe=false if any flagged array non-empty. Return ONLY the JSON.';
-  }
+function setAnalyzeBtn(ready) {
+  var btn = document.getElementById('analyze-btn');
+  btn.disabled = !ready;
+  btn.textContent = ready ? 'Check for avoided ingredients' : 'Select a dish above to analyze';
+}
 
-  fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': API_KEY,
-      'anthropic-version': '2023-06-01',
-      'anthropic-dangerous-direct-browser-access': 'true'
-    },
-    body: JSON.stringify({
-      model: 'claude-haiku-4-5-20251001',
-      max_tokens: 1000,
-      system: 'You are a food ingredient expert. You respond ONLY with valid raw JSON — no markdown fences, no explanation, no preamble, no postamble.',
-      messages: [{ role: 'user', content: prompt }]
+// ── Analyze ───────────────────────────────────────────────
+document.getElementById('analyze-btn').addEventListener('click', function() {
+  if (!selectedMeal) return;
+  if (!avoidList.length) { alert('Please add at least one ingredient to avoid first.'); return; }
+  runAnalysis(selectedMeal);
+});
+
+function runAnalysis(meal) {
+  showLoading(meal.strMeal);
+  fetch('https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + meal.idMeal)
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (!data.meals || !data.meals.length) throw new Error('Meal details not found');
+      var full = data.meals[0];
+      var ingredients = extractIngredients(full);
+      var result = flagIngredients(full, ingredients);
+      renderResults(result);
+      addToHistory(result);
     })
-  })
-  .then(function(r) {
-    if (!r.ok) return r.text().then(function(t) { throw new Error('API error ' + r.status + ': ' + t.substring(0, 200)); });
-    return r.json();
-  })
-  .then(function(data) {
-    if (!data.content || !data.content.length) throw new Error('Empty response from Claude');
-    var text = data.content.filter(function(b) { return b.type === 'text'; }).map(function(b) { return b.text; }).join('').trim();
-    text = text.replace(/^```json\s*/i,'').replace(/^```\s*/i,'').replace(/```\s*$/i,'').trim();
-    var match = text.match(/\{[\s\S]*\}/);
-    if (!match) throw new Error('No JSON in response');
-    var result = JSON.parse(match[0]);
-    result._thumbUrl = thumbUrl || null;
-    result._sourceUrl = sourceUrl || null;
-    result._fromMealDB = (ingredients && ingredients.length > 0);
-    renderResults(result);
-    addToHistory(result);
-  })
-  .catch(function(err) {
-    document.getElementById('results-container').innerHTML =
-      '<div class="card"><div class="error-box"><strong>Analysis failed:</strong> ' + escHtml(err.message) + '</div></div>';
-  });
+    .catch(function(err) {
+      document.getElementById('results-container').innerHTML =
+        '<div class="card"><div class="error-box"><strong>Could not load recipe:</strong> ' + escHtml(err.message) + '</div></div>';
+    });
 }
 
-// ─── Render results ───────────────────────────────────────
+function extractIngredients(meal) {
+  var list = [];
+  for (var i = 1; i <= 20; i++) {
+    var ing = (meal['strIngredient' + i] || '').trim();
+    var mea = (meal['strMeasure' + i] || '').trim();
+    if (ing) list.push({ name: ing.toLowerCase(), display: mea ? mea + ' ' + ing : ing });
+  }
+  return list;
+}
+
+function flagIngredients(meal, ingredients) {
+  // For each avoided item, check if it appears in any ingredient name
+  // Also handle common category expansions
+  var expansions = {
+    'dairy':    ['milk','cream','butter','cheese','yogurt','yoghurt','creme','fromage','ghee','whey','lactose','ricotta','mozzarella','parmesan','cheddar','brie','gouda','sour cream','ice cream','custard'],
+    'gluten':   ['flour','bread','breadcrumb','wheat','barley','rye','semolina','spelt','couscous','soy sauce','malt','beer','pasta','noodle','cracker','biscuit'],
+    'nuts':     ['nut','almond','cashew','walnut','pecan','pistachio','hazelnut','macadamia','brazil nut','pine nut','chestnut','peanut','groundnut'],
+    'peanuts':  ['peanut','groundnut'],
+    'eggs':     ['egg','mayonnaise','mayo'],
+    'shellfish':['prawn','shrimp','crab','lobster','crayfish','scallop','oyster','clam','mussel','squid','octopus'],
+    'fish':     ['fish','salmon','tuna','cod','anchovy','sardine','mackerel','tilapia','halibut','bass','trout','herring'],
+    'soy':      ['soy','soya','tofu','miso','tempeh','edamame','soy sauce','tamari'],
+    'sesame':   ['sesame','tahini'],
+    'mustard':  ['mustard'],
+    'celery':   ['celery','celeriac'],
+    'lupin':    ['lupin','lupine'],
+    'sulphites':['wine','vinegar','dried fruit','sulfite','sulphite']
+  };
+
+  var flagged = [];
+  var safe = true;
+
+  avoidList.forEach(function(avoided) {
+    var terms = [avoided];
+    // add expansion terms if this avoid item is a category
+    if (expansions[avoided]) terms = terms.concat(expansions[avoided]);
+
+    ingredients.forEach(function(ing) {
+      var hit = terms.some(function(term) {
+        return ing.name.indexOf(term) !== -1;
+      });
+      if (hit) {
+        // avoid duplicates
+        var already = flagged.some(function(f) { return f.display === ing.display; });
+        if (!already) { flagged.push({ display: ing.display, avoided: avoided }); safe = false; }
+      }
+    });
+  });
+
+  return {
+    food_name:   meal.strMeal,
+    category:    meal.strCategory || '',
+    area:        meal.strArea || '',
+    thumb:       meal.strMealThumb || '',
+    source:      meal.strSource || '',
+    youtube:     meal.strYoutube || '',
+    ingredients: ingredients,
+    flagged:     flagged,
+    safe:        safe
+  };
+}
+
+// ── Render ────────────────────────────────────────────────
 function renderResults(r) {
   var container = document.getElementById('results-container');
-  var fa = r.flagged_always || [];
-  var fs = r.flagged_sometimes || [];
-  var fr = r.flagged_rarely || [];
-  var totalFlags = fa.length + fs.length + fr.length;
-  var allFlagged = fa.concat(fs).concat(fr).map(function(s) { return s.toLowerCase(); });
+  var flaggedNames = r.flagged.map(function(f) { return f.display.toLowerCase(); });
 
-  // Source note
-  var sourceLine = '';
-  if (r._fromMealDB) {
-    sourceLine = 'Recipe data from TheMealDB';
-    if (r._sourceUrl) sourceLine += ' &mdash; <a href="' + escHtml(r._sourceUrl) + '" target="_blank">original recipe</a>';
-  } else {
-    sourceLine = 'Dish not found in TheMealDB &mdash; analysis based on knowledge of allrecipes.com &amp; seriouseats.com';
-  }
+  // Meta line
+  var metaParts = [];
+  if (r.category) metaParts.push(r.category);
+  if (r.area) metaParts.push(r.area + ' cuisine');
+  if (r.source) metaParts.push('<a href="' + escHtml(r.source) + '" target="_blank">original recipe</a>');
+  if (r.youtube) metaParts.push('<a href="' + escHtml(r.youtube) + '" target="_blank">watch video</a>');
 
-  // Alert boxes
+  // Flag summary
   var alertHTML = '';
-  if (totalFlags === 0) {
+  if (r.safe) {
     alertHTML = '<div class="alert-box alert-safe">'
-      + '<div class="alert-head"><div class="alert-dot" style="background:#60A840;"></div>'
-      + '<span class="alert-label" style="color:var(--safe-text);">No flags found</span></div>'
-      + '<p style="font-size:0.9rem;color:var(--safe-text);">&#10003; None of your avoided ingredients were identified in this dish.</p>'
+      + '<div class="alert-head"><div class="alert-dot" style="background:#40B870;"></div>'
+      + '<span class="alert-label" style="color:var(--safe-txt);">No flags found</span></div>'
+      + '<p style="font-size:0.9rem;color:var(--safe-txt);font-weight:600;">&#10003; None of your avoided ingredients were found in this dish.</p>'
       + '</div>';
   } else {
-    if (fa.length) alertHTML += makeAlert('danger', 'Almost always present', fa, 'chip-danger');
-    if (fs.length) alertHTML += makeAlert('warn', 'Sometimes present', fs, 'chip-warn');
-    if (fr.length) alertHTML += makeAlert('rare', 'Occasionally present', fr, 'chip-rare');
+    // Group flagged by avoided category
+    var byCategory = {};
+    r.flagged.forEach(function(f) {
+      if (!byCategory[f.avoided]) byCategory[f.avoided] = [];
+      byCategory[f.avoided].push(f.display);
+    });
+    alertHTML = '<div class="alert-box alert-danger">'
+      + '<div class="alert-head"><div class="alert-dot" style="background:#D64030;"></div>'
+      + '<span class="alert-label" style="color:var(--danger-txt);">Avoided ingredients found</span></div>'
+      + '<div class="chips">'
+      + r.flagged.map(function(f) {
+          return '<span class="chip chip-danger">' + escHtml(f.display) + '</span>';
+        }).join('')
+      + '</div></div>';
   }
 
-  // Ingredient grid
-  function ingCol(arr) {
-    if (!arr || !arr.length) return '<div class="ing-item" style="color:var(--text3);">none listed</div>';
-    return arr.map(function(i) {
-      // strip measure prefix for flagging check
-      var bare = i.replace(/^[\d\s\/\u00bc-\u00be\u2150-\u215e\w]*(tsp|tbsp|cup|oz|lb|g|kg|ml|l|clove|cloves|bunch|slice|slices|piece|pieces|can|cans|large|small|medium|whole|fresh|dried|chopped|minced|diced|grated|ground)s?\s+/i, '').toLowerCase();
-      var fl = allFlagged.some(function(f) {
-        return bare.indexOf(f) !== -1 || f.indexOf(bare) !== -1 || i.toLowerCase().indexOf(f) !== -1;
-      });
-      return '<div class="ing-item' + (fl ? ' flagged' : '') + '">' + escHtml(i) + (fl ? ' &#9873;' : '') + '</div>';
-    }).join('');
-  }
-
-  // Thumbnail
-  var thumbHTML = '';
-  if (r._thumbUrl) {
-    thumbHTML = '<img src="' + escHtml(r._thumbUrl) + '" alt="' + escHtml(r.food_name) + '" '
-      + 'style="width:100%;max-height:220px;object-fit:cover;border-radius:10px;margin-bottom:1rem;" />';
-  }
+  // All ingredients
+  var allIngHTML = r.ingredients.map(function(ing) {
+    var fl = flaggedNames.some(function(fn) { return fn === ing.display.toLowerCase(); });
+    return '<span class="ing-chip' + (fl ? ' flagged' : '') + '">' + escHtml(ing.display) + (fl ? ' ⚑' : '') + '</span>';
+  }).join('');
 
   container.innerHTML = '<div class="card">'
-    + thumbHTML
-    + '<div class="result-header">'
-    + '<div class="result-name">' + escHtml(r.food_name || '') + '</div>'
-    + '<div class="result-desc">' + escHtml(r.description || '') + '</div>'
-    + '<div class="result-meta">' + sourceLine + '</div>'
-    + '</div>'
+    + (r.thumb ? '<img class="result-thumb" src="' + escHtml(r.thumb) + '" alt="' + escHtml(r.food_name) + '" />' : '')
+    + '<div class="result-name">' + escHtml(r.food_name) + '</div>'
+    + (metaParts.length ? '<div class="result-meta" style="margin-bottom:1rem;">' + metaParts.join(' &middot; ') + '</div>' : '')
     + alertHTML
-    + '<button class="ing-toggle" id="ing-toggle">Show all identified ingredients &#9660;</button>'
-    + '<div class="ing-grid" id="ing-grid">'
-    + '<div><div class="ing-col-title">Always / listed</div>' + ingCol(r.always_used) + '</div>'
-    + '<div><div class="ing-col-title">Sometimes used</div>' + ingCol(r.sometimes_used) + '</div>'
-    + '<div><div class="ing-col-title">Rarely used</div>' + ingCol(r.rarely_used) + '</div>'
+    + '<button class="ing-toggle" id="ing-toggle">Show all ingredients &#9660;</button>'
+    + '<div class="ing-section" id="ing-section">'
+    + '<div class="ing-chips" style="margin-top:0.5rem;">' + allIngHTML + '</div>'
     + '</div>'
-    + '<div class="disclaimer"><p><strong>Important:</strong> This tool estimates what a dish <em>may</em> contain. '
-    + 'It is <strong>not a substitute for reading labels, asking restaurant staff, or consulting a medical professional.</strong> '
-    + 'Recipes vary by chef, region, and restaurant. Always verify with the food preparer if you have a serious allergy or medical need.</p></div>'
-    + '<button class="btn-secondary" id="new-check-btn">+ Check another food</button>'
+    + '<div class="disclaimer"><p><strong>Important:</strong> This tool checks TheMealDB\'s recipe data only. '
+    + 'Recipes vary by chef, restaurant, and region. '
+    + '<strong>Not a substitute for reading labels, asking restaurant staff, or consulting a medical professional.</strong> '
+    + 'Always verify with the food preparer if you have a serious allergy or medical need.</p></div>'
+    + '<button class="btn-secondary" id="new-check-btn">+ Check another dish</button>'
     + '</div>';
 
   document.getElementById('ing-toggle').addEventListener('click', function() {
-    var grid = document.getElementById('ing-grid');
-    var open = grid.classList.toggle('open');
-    this.innerHTML = open ? 'Hide all ingredients &#9650;' : 'Show all identified ingredients &#9660;';
+    var sec = document.getElementById('ing-section');
+    var open = sec.classList.toggle('open');
+    this.innerHTML = open ? 'Hide ingredients &#9650;' : 'Show all ingredients &#9660;';
   });
   document.getElementById('new-check-btn').addEventListener('click', function() {
     container.innerHTML = '';
-    document.getElementById('food-name-input').value = '';
-    document.getElementById('menu-text-input').value = '';
+    document.getElementById('food-search').value = '';
+    selectedMeal = null;
+    setAnalyzeBtn(false);
   });
 }
 
-function makeAlert(type, label, items, chipClass) {
-  var dotColors = { danger: '#D64030', warn: '#C89830', rare: '#908880' };
-  var labelColors = { danger: 'var(--danger-text)', warn: 'var(--warn-text)', rare: 'var(--rare-text)' };
-  return '<div class="alert-box alert-' + type + '">'
-    + '<div class="alert-head">'
-    + '<div class="alert-dot" style="background:' + dotColors[type] + ';"></div>'
-    + '<span class="alert-label" style="color:' + labelColors[type] + ';">' + label + '</span>'
-    + '</div>'
-    + '<div class="chips">' + items.map(function(i) { return '<span class="chip ' + chipClass + '">' + escHtml(i) + '</span>'; }).join('') + '</div>'
+function showLoading(name) {
+  document.getElementById('results-container').innerHTML =
+    '<div class="loading-card">'
+    + '<div class="loading-dots"><span></span><span></span><span></span></div>'
+    + '<div class="loading-title">Checking ' + escHtml(name) + '&hellip;</div>'
+    + '<div class="loading-sub">Loading recipe from TheMealDB</div>'
     + '</div>';
 }
 
-// ─── History ──────────────────────────────────────────────
+// ── History ───────────────────────────────────────────────
 function addToHistory(result) {
-  var flags = (result.flagged_always||[]).length + (result.flagged_sometimes||[]).length + (result.flagged_rarely||[]).length;
-  searchHistory.unshift({ name: result.food_name || 'Unknown', flags: flags, result: result });
+  searchHistory.unshift({ name: result.food_name, flags: result.flagged.length, result: result });
   if (searchHistory.length > 8) searchHistory.pop();
   renderHistory();
 }
@@ -741,7 +722,7 @@ function renderHistory() {
     div.className = 'hist-item';
     div.innerHTML = '<span class="hist-name">' + escHtml(h.name) + '</span>'
       + (h.flags > 0
-        ? '<span class="hist-flag">&#9873; ' + h.flags + ' flag' + (h.flags !== 1 ? 's' : '') + '</span>'
+        ? '<span class="hist-flag">&#9873; ' + h.flags + ' ingredient' + (h.flags !== 1 ? 's' : '') + ' flagged</span>'
         : '<span class="hist-safe">&#10003; No flags</span>');
     div.addEventListener('click', function() {
       renderResults(h.result);
@@ -751,7 +732,7 @@ function renderHistory() {
   });
 }
 
-// ─── Utility ──────────────────────────────────────────────
+// ── Utility ───────────────────────────────────────────────
 function escHtml(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
