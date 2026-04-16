@@ -44,7 +44,6 @@
     padding-bottom: 4rem;
   }
 
-  /* ── Header ── */
   .site-header {
     background: linear-gradient(135deg, #1A8FBF 0%, #1570A0 100%);
     padding: 1.75rem 2rem 1.5rem;
@@ -54,304 +53,134 @@
     text-align: center;
     box-shadow: 0 2px 12px rgba(26,111,159,0.18);
   }
-  .site-logo {
-    font-family: 'Lora', serif;
-    font-size: 2.25rem;
-    font-weight: 600;
-    color: #fff;
-    letter-spacing: -0.01em;
-    margin-bottom: 4px;
-  }
-  .site-logo em {
-    font-style: italic;
-    color: #B8E4F5;
-  }
-  .site-tagline {
-    font-size: 0.8125rem;
-    font-weight: 500;
-    color: rgba(255,255,255,0.65);
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-  }
+  .site-logo { font-family: 'Lora', serif; font-size: 2.25rem; font-weight: 600; color: #fff; letter-spacing: -0.01em; margin-bottom: 4px; }
+  .site-logo em { font-style: italic; color: #B8E4F5; }
+  .site-tagline { font-size: 0.8125rem; font-weight: 500; color: rgba(255,255,255,0.65); letter-spacing: 0.07em; text-transform: uppercase; }
 
-  /* ── Layout ── */
-  .container {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 2rem 1.25rem;
-  }
+  .container { max-width: 720px; margin: 0 auto; padding: 2rem 1.25rem; }
 
-  /* ── Cards ── */
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 1.5rem;
-    margin-bottom: 1.25rem;
-    box-shadow: 0 2px 8px rgba(26,111,159,0.06);
-  }
-  .card-title {
-    font-size: 0.6875rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--text3);
-    margin-bottom: 1rem;
-  }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.25rem; box-shadow: 0 2px 8px rgba(26,111,159,0.06); }
+  .card-title { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text3); margin-bottom: 1rem; }
 
-  /* ── Avoid list ── */
   .input-row { display: flex; gap: 8px; margin-bottom: 0.875rem; }
-  .input-row input {
-    flex: 1;
-    padding: 10px 14px;
-    font-family: 'Nunito', sans-serif;
-    font-size: 0.9375rem;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    background: var(--surface2);
-    color: var(--text);
-    outline: none;
-    transition: border-color 0.15s, background 0.15s;
-  }
+  .input-row input { flex: 1; padding: 10px 14px; font-family: 'Nunito', sans-serif; font-size: 0.9375rem; border: 1.5px solid var(--border); border-radius: 10px; background: var(--surface2); color: var(--text); outline: none; transition: border-color 0.15s, background 0.15s; }
   .input-row input:focus { border-color: var(--accent); background: #fff; }
   .input-row input::placeholder { color: var(--text3); }
 
-  .btn-add {
-    padding: 10px 22px;
-    background: var(--accent);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-family: 'Nunito', sans-serif;
-    font-size: 0.9375rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.15s;
-    white-space: nowrap;
-  }
+  .btn-add { padding: 10px 22px; background: var(--accent); color: white; border: none; border-radius: 10px; font-family: 'Nunito', sans-serif; font-size: 0.9375rem; font-weight: 700; cursor: pointer; transition: background 0.15s; white-space: nowrap; }
   .btn-add:hover { background: var(--accent-hover); }
 
   .tags { display: flex; flex-wrap: wrap; gap: 7px; min-height: 28px; align-items: center; }
-  .tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    background: var(--accent-light);
-    color: var(--accent-hover);
-    border: 1px solid var(--border2);
-    border-radius: 20px;
-    padding: 4px 10px 4px 14px;
-    font-size: 0.8125rem;
-    font-weight: 600;
-  }
-  .tag button {
-    background: none; border: none; cursor: pointer;
-    color: var(--accent); font-size: 1.1rem; line-height: 1;
-    padding: 0 2px; display: flex; align-items: center;
-    transition: color 0.1s;
-  }
+  .tag { display: inline-flex; align-items: center; gap: 5px; background: var(--accent-light); color: var(--accent-hover); border: 1px solid var(--border2); border-radius: 20px; padding: 4px 10px 4px 14px; font-size: 0.8125rem; font-weight: 600; }
+  .tag button { background: none; border: none; cursor: pointer; color: var(--accent); font-size: 1.1rem; line-height: 1; padding: 0 2px; display: flex; align-items: center; }
   .tag button:hover { color: var(--accent-hover); }
   .empty-hint { font-size: 0.8125rem; color: var(--text3); font-style: italic; }
 
-  /* ── Search ── */
+  /* Tabs */
+  .tabs { display: flex; gap: 4px; margin-bottom: 1.25rem; background: var(--surface2); padding: 4px; border-radius: 10px; }
+  .tab { flex: 1; padding: 9px 6px; border: none; border-radius: 7px; font-family: 'Nunito', sans-serif; font-size: 0.8125rem; font-weight: 700; cursor: pointer; background: transparent; color: var(--text2); transition: all 0.15s; text-align: center; }
+  .tab.active { background: var(--surface); color: var(--accent); border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* Search / autocomplete */
   .search-wrap { position: relative; margin-bottom: 0.875rem; }
-  .search-wrap input {
-    width: 100%;
-    padding: 11px 42px 11px 16px;
-    font-family: 'Nunito', sans-serif;
-    font-size: 0.9375rem;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    background: var(--surface2);
-    color: var(--text);
-    outline: none;
-    transition: border-color 0.15s, background 0.15s;
-  }
+  .search-wrap input { width: 100%; padding: 11px 42px 11px 16px; font-family: 'Nunito', sans-serif; font-size: 0.9375rem; border: 1.5px solid var(--border); border-radius: 10px; background: var(--surface2); color: var(--text); outline: none; transition: border-color 0.15s, background 0.15s; }
   .search-wrap input:focus { border-color: var(--accent); background: #fff; }
   .search-wrap input::placeholder { color: var(--text3); }
-  .search-icon {
-    position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
-    color: var(--text3); pointer-events: none; font-size: 1rem;
-  }
-
-  /* Autocomplete dropdown */
-  .autocomplete-list {
-    position: absolute; top: 100%; left: 0; right: 0; z-index: 100;
-    background: var(--surface); border: 1.5px solid var(--border2);
-    border-top: none; border-radius: 0 0 10px 10px;
-    max-height: 220px; overflow-y: auto;
-    box-shadow: 0 6px 18px rgba(26,111,159,0.12);
-    display: none;
-  }
+  .search-icon { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: var(--text3); pointer-events: none; font-size: 1rem; }
+  .autocomplete-list { position: absolute; top: 100%; left: 0; right: 0; z-index: 100; background: var(--surface); border: 1.5px solid var(--border2); border-top: none; border-radius: 0 0 10px 10px; max-height: 240px; overflow-y: auto; box-shadow: 0 6px 18px rgba(26,111,159,0.12); display: none; }
   .autocomplete-list.open { display: block; }
-  .ac-item {
-    display: flex; align-items: center; gap: 10px;
-    padding: 8px 14px; cursor: pointer;
-    font-size: 0.875rem; color: var(--text);
-    transition: background 0.1s;
-    border-bottom: 1px solid var(--bg2);
-  }
+  .ac-item { display: flex; align-items: center; gap: 10px; padding: 8px 14px; cursor: pointer; font-size: 0.875rem; color: var(--text); transition: background 0.1s; border-bottom: 1px solid var(--bg2); }
   .ac-item:last-child { border-bottom: none; }
   .ac-item:hover, .ac-item.focused { background: var(--accent-light); }
-  .ac-thumb {
-    width: 36px; height: 36px; border-radius: 6px;
-    object-fit: cover; flex-shrink: 0;
-    background: var(--bg2);
-  }
-  .ac-name { font-weight: 600; }
+  .ac-thumb { width: 36px; height: 36px; border-radius: 6px; object-fit: cover; flex-shrink: 0; background: var(--bg2); }
+  .ac-name { font-weight: 600; flex: 1; }
+  .ac-source { font-size: 0.75rem; color: var(--text3); }
   .ac-loading { padding: 10px 14px; font-size: 0.8125rem; color: var(--text3); font-style: italic; }
 
-  .btn-analyze {
-    width: 100%; padding: 12px;
-    background: var(--accent); color: white; border: none; border-radius: 10px;
-    font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 700;
-    cursor: pointer; letter-spacing: 0.01em;
-    transition: background 0.15s, transform 0.1s;
-  }
+  /* Food facts search */
+  .food-input { width: 100%; padding: 10px 14px; font-family: 'Nunito', sans-serif; font-size: 0.9375rem; border: 1.5px solid var(--border); border-radius: 10px; background: var(--surface2); color: var(--text); outline: none; margin-bottom: 0.875rem; transition: border-color 0.15s, background 0.15s; }
+  .food-input:focus { border-color: var(--accent); background: #fff; }
+  .food-input::placeholder { color: var(--text3); }
+
+  /* Manual textarea */
+  textarea.food-input { resize: vertical; min-height: 100px; line-height: 1.5; }
+
+  .source-hint { font-size: 0.8rem; color: var(--text3); margin-bottom: 0.875rem; line-height: 1.5; }
+  .source-hint a { color: var(--accent); }
+
+  .btn-analyze { width: 100%; padding: 12px; background: var(--accent); color: white; border: none; border-radius: 10px; font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; letter-spacing: 0.01em; transition: background 0.15s, transform 0.1s; }
   .btn-analyze:hover { background: var(--accent-hover); }
   .btn-analyze:active { transform: scale(0.99); }
   .btn-analyze:disabled { background: var(--border); color: var(--text3); cursor: not-allowed; transform: none; }
 
-  /* ── Loading ── */
-  .loading-card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 16px; padding: 2.5rem 1.5rem;
-    text-align: center; margin-bottom: 1.25rem;
-    box-shadow: 0 2px 8px rgba(26,111,159,0.06);
-  }
+  /* Loading */
+  .loading-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem 1.5rem; text-align: center; margin-bottom: 1.25rem; box-shadow: 0 2px 8px rgba(26,111,159,0.06); }
   .loading-dots { display: flex; justify-content: center; gap: 7px; margin-bottom: 1rem; }
-  .loading-dots span {
-    width: 10px; height: 10px; border-radius: 50%;
-    background: var(--accent); opacity: 0.3;
-    animation: pulse 1.2s ease-in-out infinite;
-  }
+  .loading-dots span { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); opacity: 0.3; animation: pulse 1.2s ease-in-out infinite; }
   .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
   .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
   @keyframes pulse { 0%,100%{opacity:0.25;transform:scale(0.75)} 50%{opacity:1;transform:scale(1)} }
   .loading-title { font-family: 'Lora', serif; font-size: 1.2rem; color: var(--text); margin-bottom: 4px; }
   .loading-sub { font-size: 0.8125rem; color: var(--text2); }
 
-  /* ── Results ── */
-  .result-thumb {
-    width: 100%; max-height: 220px; object-fit: cover;
-    border-radius: 10px; margin-bottom: 1.25rem; display: block;
-  }
-  .result-name {
-    font-family: 'Lora', serif; font-size: 1.65rem;
-    font-weight: 600; color: var(--text); margin-bottom: 4px;
-  }
-  .result-desc { font-size: 0.875rem; color: var(--text2); line-height: 1.55; margin-bottom: 6px; }
-  .result-meta { font-size: 0.75rem; color: var(--text3); }
+  /* Results */
+  .result-thumb { width: 100%; max-height: 220px; object-fit: cover; border-radius: 10px; margin-bottom: 1.25rem; display: block; }
+  .result-name { font-family: 'Lora', serif; font-size: 1.65rem; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .result-meta { font-size: 0.75rem; color: var(--text3); margin-bottom: 1rem; }
   .result-meta a { color: var(--accent); text-decoration: none; }
   .result-meta a:hover { text-decoration: underline; }
+  .result-source-badge { display: inline-block; font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 2px 8px; border-radius: 20px; margin-right: 6px; }
+  .badge-mealdb { background: #D6EEF8; color: #136E96; }
+  .badge-off { background: #D6F0E0; color: #0A5E2A; }
+  .badge-manual { background: #F0ECF8; color: #4A2A80; }
 
-  /* ── Alert boxes ── */
+  /* Alert boxes */
   .alert-box { border-radius: 10px; padding: 1rem 1.125rem; margin-bottom: 0.875rem; }
   .alert-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
   .alert-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
   .alert-label { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
   .chips { display: flex; flex-wrap: wrap; gap: 6px; }
   .chip { font-size: 0.8125rem; font-weight: 600; padding: 4px 12px; border-radius: 20px; }
-
   .alert-danger { background: var(--danger-bg); border: 1px solid var(--danger-bdr); }
   .alert-danger .alert-label { color: var(--danger-txt); }
   .chip-danger { background: #FACFC8; color: var(--danger-txt); }
-
-  .alert-warn { background: var(--warn-bg); border: 1px solid var(--warn-bdr); }
-  .alert-warn .alert-label { color: var(--warn-txt); }
-  .chip-warn { background: #F8E8A8; color: var(--warn-txt); }
-
   .alert-safe { background: var(--safe-bg); border: 1px solid var(--safe-bdr); }
   .alert-safe .alert-label { color: var(--safe-txt); }
 
-  .alert-rare { background: var(--rare-bg); border: 1px solid var(--rare-bdr); }
-  .alert-rare .alert-label { color: var(--rare-txt); }
-  .chip-rare { background: #C8DCE8; color: var(--rare-txt); }
-
-  /* ── Ingredient list ── */
-  .ing-toggle {
-    font-size: 0.8125rem; color: var(--accent); background: none; border: none;
-    cursor: pointer; font-family: 'Nunito', sans-serif; font-weight: 600;
-    padding: 0; margin-top: 1rem; display: inline-flex; align-items: center; gap: 5px;
-  }
+  /* Ingredient chips */
+  .ing-toggle { font-size: 0.8125rem; color: var(--accent); background: none; border: none; cursor: pointer; font-family: 'Nunito', sans-serif; font-weight: 600; padding: 0; margin-top: 1rem; display: inline-flex; align-items: center; gap: 5px; }
   .ing-toggle:hover { color: var(--accent-hover); }
-
-  .ing-section { display: none; margin-top: 1rem; }
+  .ing-section { display: none; margin-top: 0.875rem; }
   .ing-section.open { display: block; }
-  .ing-group { margin-bottom: 1rem; }
-  .ing-col-title {
-    font-size: 0.6875rem; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.08em; color: var(--text3); margin-bottom: 6px;
-    padding-bottom: 4px; border-bottom: 1.5px solid var(--bg2);
-  }
-  .ing-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
-  .ing-chip {
-    font-size: 0.8125rem; padding: 3px 11px; border-radius: 20px;
-    background: var(--surface2); border: 1px solid var(--border);
-    color: var(--text2); font-weight: 500;
-  }
-  .ing-chip.flagged {
-    background: #FFE8E4; border-color: var(--danger-bdr);
-    color: var(--danger-txt); font-weight: 700;
-  }
+  .ing-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .ing-chip { font-size: 0.8125rem; padding: 3px 11px; border-radius: 20px; background: var(--surface2); border: 1px solid var(--border); color: var(--text2); font-weight: 500; }
+  .ing-chip.flagged { background: #FFE8E4; border-color: var(--danger-bdr); color: var(--danger-txt); font-weight: 700; }
 
-  /* ── Not found ── */
-  .not-found-box {
-    background: var(--warn-bg); border: 1px solid var(--warn-bdr);
-    border-radius: 10px; padding: 1rem 1.125rem;
-    font-size: 0.875rem; color: var(--warn-txt); margin-bottom: 1rem;
-    line-height: 1.5;
-  }
-
-  /* ── Disclaimer ── */
-  .disclaimer {
-    margin-top: 1rem; padding: 0.875rem 1rem;
-    background: var(--bg2); border-radius: 10px;
-    border-left: 3px solid var(--accent);
-    font-size: 0.75rem; color: var(--text2); line-height: 1.6;
-  }
+  .disclaimer { margin-top: 1rem; padding: 0.875rem 1rem; background: var(--bg2); border-radius: 10px; border-left: 3px solid var(--accent); font-size: 0.75rem; color: var(--text2); line-height: 1.6; }
   .disclaimer strong { color: var(--text); }
 
-  /* ── Buttons ── */
-  .btn-secondary {
-    margin-top: 1rem; padding: 9px 20px;
-    background: transparent; border: 1.5px solid var(--accent);
-    color: var(--accent); border-radius: 10px;
-    font-family: 'Nunito', sans-serif; font-size: 0.875rem; font-weight: 700;
-    cursor: pointer; transition: background 0.15s;
-  }
+  .btn-secondary { margin-top: 1rem; padding: 9px 20px; background: transparent; border: 1.5px solid var(--accent); color: var(--accent); border-radius: 10px; font-family: 'Nunito', sans-serif; font-size: 0.875rem; font-weight: 700; cursor: pointer; transition: background 0.15s; }
   .btn-secondary:hover { background: var(--accent-light); }
 
-  /* ── History ── */
-  .hist-item {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 10px 14px; background: var(--surface2); border-radius: 10px;
-    cursor: pointer; border: 1.5px solid transparent; margin-bottom: 8px;
-    transition: border-color 0.15s, background 0.15s;
-  }
+  .hist-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: var(--surface2); border-radius: 10px; cursor: pointer; border: 1.5px solid transparent; margin-bottom: 8px; transition: border-color 0.15s, background 0.15s; }
   .hist-item:hover { border-color: var(--border2); background: var(--surface); }
   .hist-name { font-size: 0.9375rem; font-weight: 600; color: var(--text); }
   .hist-flag { font-size: 0.75rem; font-weight: 700; color: var(--danger-txt); }
   .hist-safe { font-size: 0.75rem; font-weight: 700; color: var(--safe-txt); }
 
-  /* ── Error ── */
-  .error-box {
-    background: var(--danger-bg); border: 1px solid var(--danger-bdr);
-    border-radius: 10px; padding: 1rem 1.125rem;
-    font-size: 0.875rem; color: var(--danger-txt);
-  }
+  .error-box { background: var(--danger-bg); border: 1px solid var(--danger-bdr); border-radius: 10px; padding: 1rem 1.125rem; font-size: 0.875rem; color: var(--danger-txt); }
+  .warn-box { background: var(--warn-bg); border: 1px solid var(--warn-bdr); border-radius: 10px; padding: 1rem 1.125rem; font-size: 0.875rem; color: var(--warn-txt); margin-bottom: 0.875rem; line-height: 1.5; }
 
-  /* ── Footer ── */
-  .site-footer {
-    text-align: center; padding: 2rem 1rem 1rem;
-    font-size: 0.75rem; color: var(--text3);
-  }
+  .site-footer { text-align: center; padding: 2rem 1rem 1rem; font-size: 0.75rem; color: var(--text3); line-height: 1.8; }
   .site-footer a { color: var(--accent); text-decoration: none; }
   .site-footer a:hover { text-decoration: underline; }
 
   @media (max-width: 520px) {
     .site-logo { font-size: 1.75rem; }
     .container { padding: 1.25rem 1rem; }
+    .tab { font-size: 0.75rem; padding: 8px 4px; }
   }
 </style>
 </head>
@@ -376,15 +205,45 @@
     </div>
   </div>
 
-  <!-- Search -->
+  <!-- Check your food -->
   <div class="card">
-    <div class="card-title">Check a dish</div>
-    <div class="search-wrap">
-      <input type="text" id="food-search" placeholder="Start typing a dish name…" autocomplete="off" />
-      <span class="search-icon">&#128269;</span>
-      <div class="autocomplete-list" id="ac-list"></div>
+    <div class="card-title">Check your food</div>
+
+    <div class="tabs">
+      <button class="tab active" id="tab-meal-btn">🍽 Dish name</button>
+      <button class="tab" id="tab-product-btn">📦 Packaged food</button>
+      <button class="tab" id="tab-manual-btn">✏️ Paste ingredients</button>
     </div>
-    <button class="btn-analyze" id="analyze-btn" disabled>Select a dish above to analyze</button>
+
+    <!-- Tab 1: TheMealDB dish search -->
+    <div class="panel active" id="panel-meal">
+      <div class="search-wrap">
+        <input type="text" id="meal-search" placeholder="Start typing a dish name e.g. Pad Thai…" autocomplete="off" />
+        <span class="search-icon">&#128269;</span>
+        <div class="autocomplete-list" id="meal-ac-list"></div>
+      </div>
+      <div class="source-hint">Searches <a href="https://www.themealdb.com/" target="_blank">TheMealDB</a> — covers hundreds of popular dishes worldwide.</div>
+      <button class="btn-analyze" id="analyze-meal-btn" disabled>Select a dish above to check</button>
+    </div>
+
+    <!-- Tab 2: Open Food Facts product search -->
+    <div class="panel" id="panel-product">
+      <div class="search-wrap">
+        <input type="text" id="product-search" placeholder="Search a product name or brand e.g. Oreo…" autocomplete="off" />
+        <span class="search-icon">&#128269;</span>
+        <div class="autocomplete-list" id="product-ac-list"></div>
+      </div>
+      <div class="source-hint">Searches <a href="https://world.openfoodfacts.org/" target="_blank">Open Food Facts</a> — a global database of packaged food products.</div>
+      <button class="btn-analyze" id="analyze-product-btn" disabled>Select a product above to check</button>
+    </div>
+
+    <!-- Tab 3: Manual paste -->
+    <div class="panel" id="panel-manual">
+      <input type="text" class="food-input" id="manual-name" placeholder="Dish or product name (optional)" />
+      <textarea class="food-input" id="manual-ingredients" placeholder="Paste the ingredients list here, one per line or comma-separated…&#10;&#10;e.g. flour, sugar, butter, eggs, vanilla extract, baking powder"></textarea>
+      <div class="source-hint">Copy ingredients from any recipe website, restaurant menu, or food label and paste them above.</div>
+      <button class="btn-analyze" id="analyze-manual-btn">Check these ingredients</button>
+    </div>
   </div>
 
   <div id="results-container"></div>
@@ -398,16 +257,41 @@
 </div>
 
 <footer class="site-footer">
-  Recipe data from <a href="https://www.themealdb.com/" target="_blank">TheMealDB</a>.
-  This tool is not a substitute for medical advice — always verify with the food preparer.
+  Recipe data: <a href="https://www.themealdb.com/" target="_blank">TheMealDB</a> &nbsp;|&nbsp;
+  Product data: <a href="https://world.openfoodfacts.org/" target="_blank">Open Food Facts</a><br/>
+  This tool is not a substitute for medical advice — always verify with the food preparer or read the label.
 </footer>
 
 <script>
 // ── State ─────────────────────────────────────────────────
 var avoidList = [];
 var searchHistory = [];
-var selectedMeal = null;   // { idMeal, strMeal, strMealThumb }
-var acTimeout = null;
+var selectedMeal = null;
+var selectedProduct = null;
+var mealAcTimeout = null;
+var productAcTimeout = null;
+
+// ── Category expansions for smarter matching ──────────────
+var expansions = {
+  'dairy':     ['milk','cream','butter','cheese','yogurt','yoghurt','creme fraiche','fromage','ghee','whey','lactose','ricotta','mozzarella','parmesan','cheddar','brie','gouda','sour cream','ice cream','custard','skimmed milk','whole milk','buttermilk','condensed milk','evaporated milk'],
+  'gluten':    ['flour','bread','breadcrumb','wheat','barley','rye','semolina','spelt','couscous','soy sauce','malt','beer','pasta','noodle','cracker','biscuit','oat','bulgur'],
+  'nuts':      ['nut','almond','cashew','walnut','pecan','pistachio','hazelnut','macadamia','brazil nut','pine nut','chestnut','peanut','groundnut','praline','marzipan','nougat'],
+  'peanuts':   ['peanut','groundnut','peanut butter','peanut oil'],
+  'tree nuts': ['almond','cashew','walnut','pecan','pistachio','hazelnut','macadamia','brazil nut','pine nut','chestnut'],
+  'eggs':      ['egg','mayonnaise','mayo','meringue','albumin','lecithin'],
+  'shellfish': ['prawn','shrimp','crab','lobster','crayfish','scallop','oyster','clam','mussel','squid','octopus','langoustine'],
+  'fish':      ['fish','salmon','tuna','cod','anchovy','sardine','mackerel','tilapia','halibut','bass','trout','herring','haddock','pollock','plaice'],
+  'soy':       ['soy','soya','tofu','miso','tempeh','edamame','soy sauce','tamari','soybean','soya milk'],
+  'sesame':    ['sesame','tahini','sesame oil','sesame seed'],
+  'mustard':   ['mustard','mustard seed','mustard powder','mustard oil'],
+  'celery':    ['celery','celeriac','celery salt','celery seed'],
+  'lupin':     ['lupin','lupine','lupin flour','lupin seed'],
+  'sulphites': ['wine','vinegar','dried fruit','sulfite','sulphite','sulphur dioxide'],
+  'wheat':     ['wheat','flour','bread','pasta','noodle','semolina','spelt','bulgur','farro'],
+  'lactose':   ['milk','cream','butter','cheese','yogurt','ice cream','custard','whey','casein'],
+  'msg':       ['msg','monosodium glutamate','yeast extract','hydrolyzed'],
+  'alcohol':   ['wine','beer','spirits','brandy','rum','vodka','whiskey','whisky','champagne','sake','mirin','sherry','port','liqueur','alcohol']
+};
 
 // ── Init ──────────────────────────────────────────────────
 (function init() {
@@ -417,9 +301,7 @@ var acTimeout = null;
 
 // ── Avoid list ────────────────────────────────────────────
 document.getElementById('add-btn').addEventListener('click', addAvoidItem);
-document.getElementById('avoid-input').addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') addAvoidItem();
-});
+document.getElementById('avoid-input').addEventListener('keydown', function(e) { if (e.key === 'Enter') addAvoidItem(); });
 
 function addAvoidItem() {
   var input = document.getElementById('avoid-input');
@@ -457,111 +339,162 @@ function renderTags() {
   });
 }
 
-// ── Autocomplete ──────────────────────────────────────────
-var foodSearch = document.getElementById('food-search');
-var acList = document.getElementById('ac-list');
-var acFocusIndex = -1;
+// ── Tabs ──────────────────────────────────────────────────
+document.getElementById('tab-meal-btn').addEventListener('click', function() { switchTab('meal'); });
+document.getElementById('tab-product-btn').addEventListener('click', function() { switchTab('product'); });
+document.getElementById('tab-manual-btn').addEventListener('click', function() { switchTab('manual'); });
 
-foodSearch.addEventListener('input', function() {
-  var q = this.value.trim();
-  selectedMeal = null;
-  setAnalyzeBtn(false);
-  clearTimeout(acTimeout);
-  if (q.length < 2) { closeAC(); return; }
-  acTimeout = setTimeout(function() { fetchSuggestions(q); }, 280);
-});
-
-foodSearch.addEventListener('keydown', function(e) {
-  var items = acList.querySelectorAll('.ac-item');
-  if (e.key === 'ArrowDown') { e.preventDefault(); acFocusIndex = Math.min(acFocusIndex + 1, items.length - 1); highlightAC(items); }
-  else if (e.key === 'ArrowUp') { e.preventDefault(); acFocusIndex = Math.max(acFocusIndex - 1, 0); highlightAC(items); }
-  else if (e.key === 'Enter') { if (acFocusIndex >= 0 && items[acFocusIndex]) items[acFocusIndex].click(); }
-  else if (e.key === 'Escape') { closeAC(); }
-});
-
-document.addEventListener('click', function(e) {
-  if (!e.target.closest('.search-wrap')) closeAC();
-});
-
-function highlightAC(items) {
-  items.forEach(function(it, i) { it.classList.toggle('focused', i === acFocusIndex); });
-  if (items[acFocusIndex]) items[acFocusIndex].scrollIntoView({ block: 'nearest' });
+function switchTab(tab) {
+  ['meal','product','manual'].forEach(function(t) {
+    document.getElementById('tab-' + t + '-btn').classList.toggle('active', t === tab);
+    document.getElementById('panel-' + t).classList.toggle('active', t === tab);
+  });
 }
 
-function fetchSuggestions(q) {
-  acList.innerHTML = '<div class="ac-loading">Searching…</div>';
-  acList.classList.add('open');
-  acFocusIndex = -1;
+// ── TheMealDB autocomplete ─────────────────────────────────
+var mealSearch = document.getElementById('meal-search');
+var mealAcList = document.getElementById('meal-ac-list');
+var mealAcFocus = -1;
+
+mealSearch.addEventListener('input', function() {
+  var q = this.value.trim();
+  selectedMeal = null;
+  setBtn('analyze-meal-btn', false, 'Select a dish above to check');
+  clearTimeout(mealAcTimeout);
+  if (q.length < 2) { closeAC(mealAcList); return; }
+  mealAcTimeout = setTimeout(function() { fetchMealSuggestions(q); }, 300);
+});
+
+mealSearch.addEventListener('keydown', function(e) { handleACKeys(e, mealAcList, function(i) { mealAcFocus = i; }); });
+document.addEventListener('click', function(e) { if (!e.target.closest('#panel-meal .search-wrap')) closeAC(mealAcList); });
+
+function fetchMealSuggestions(q) {
+  mealAcList.innerHTML = '<div class="ac-loading">Searching…</div>';
+  mealAcList.classList.add('open');
+  mealAcFocus = -1;
   fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=' + encodeURIComponent(q))
     .then(function(r) { return r.json(); })
     .then(function(data) {
-      if (!data.meals || !data.meals.length) {
-        acList.innerHTML = '<div class="ac-loading">No dishes found — try a different name</div>';
-        return;
-      }
-      acList.innerHTML = '';
+      if (!data.meals || !data.meals.length) { mealAcList.innerHTML = '<div class="ac-loading">No dishes found — try a different name</div>'; return; }
+      mealAcList.innerHTML = '';
       data.meals.slice(0, 8).forEach(function(meal) {
-        var div = document.createElement('div');
-        div.className = 'ac-item';
-        div.innerHTML = '<img class="ac-thumb" src="' + escHtml(meal.strMealThumb) + '/preview" alt="" loading="lazy" />'
-          + '<span class="ac-name">' + escHtml(meal.strMeal) + '</span>';
+        var div = buildACItem(
+          meal.strMealThumb ? meal.strMealThumb + '/preview' : '',
+          meal.strMeal,
+          meal.strCategory || ''
+        );
         div.addEventListener('click', function() {
-          selectMeal(meal);
+          selectedMeal = meal;
+          mealSearch.value = meal.strMeal;
+          closeAC(mealAcList);
+          setBtn('analyze-meal-btn', true, 'Check for avoided ingredients');
         });
-        acList.appendChild(div);
+        mealAcList.appendChild(div);
       });
-      acList.classList.add('open');
     })
-    .catch(function() {
-      acList.innerHTML = '<div class="ac-loading">Could not reach TheMealDB — check your connection</div>';
-    });
+    .catch(function() { mealAcList.innerHTML = '<div class="ac-loading">Could not reach TheMealDB — check your connection</div>'; });
 }
 
-function selectMeal(meal) {
-  selectedMeal = meal;
-  foodSearch.value = meal.strMeal;
-  closeAC();
-  setAnalyzeBtn(true);
-}
+// ── Open Food Facts autocomplete ───────────────────────────
+var productSearch = document.getElementById('product-search');
+var productAcList = document.getElementById('product-ac-list');
+var productAcFocus = -1;
 
-function closeAC() {
-  acList.classList.remove('open');
-  acList.innerHTML = '';
-  acFocusIndex = -1;
-}
-
-function setAnalyzeBtn(ready) {
-  var btn = document.getElementById('analyze-btn');
-  btn.disabled = !ready;
-  btn.textContent = ready ? 'Check for avoided ingredients' : 'Select a dish above to analyze';
-}
-
-// ── Analyze ───────────────────────────────────────────────
-document.getElementById('analyze-btn').addEventListener('click', function() {
-  if (!selectedMeal) return;
-  if (!avoidList.length) { alert('Please add at least one ingredient to avoid first.'); return; }
-  runAnalysis(selectedMeal);
+productSearch.addEventListener('input', function() {
+  var q = this.value.trim();
+  selectedProduct = null;
+  setBtn('analyze-product-btn', false, 'Select a product above to check');
+  clearTimeout(productAcTimeout);
+  if (q.length < 2) { closeAC(productAcList); return; }
+  productAcTimeout = setTimeout(function() { fetchProductSuggestions(q); }, 300);
 });
 
-function runAnalysis(meal) {
-  showLoading(meal.strMeal);
-  fetch('https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + meal.idMeal)
+productSearch.addEventListener('keydown', function(e) { handleACKeys(e, productAcList, function(i) { productAcFocus = i; }); });
+document.addEventListener('click', function(e) { if (!e.target.closest('#panel-product .search-wrap')) closeAC(productAcList); });
+
+function fetchProductSuggestions(q) {
+  productAcList.innerHTML = '<div class="ac-loading">Searching Open Food Facts…</div>';
+  productAcList.classList.add('open');
+  productAcFocus = -1;
+  var url = 'https://world.openfoodfacts.org/cgi/search.pl?search_terms=' + encodeURIComponent(q)
+    + '&search_simple=1&action=process&json=1&page_size=8&fields=id,product_name,brands,image_thumb_url,ingredients_text,allergens_tags';
+  fetch(url)
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var products = (data.products || []).filter(function(p) { return p.product_name; });
+      if (!products.length) { productAcList.innerHTML = '<div class="ac-loading">No products found — try a different name or brand</div>'; return; }
+      productAcList.innerHTML = '';
+      products.forEach(function(p) {
+        var label = p.product_name + (p.brands ? ' — ' + p.brands : '');
+        var div = buildACItem(p.image_thumb_url || '', label, '');
+        div.addEventListener('click', function() {
+          selectedProduct = p;
+          productSearch.value = p.product_name;
+          closeAC(productAcList);
+          setBtn('analyze-product-btn', true, 'Check for avoided ingredients');
+        });
+        productAcList.appendChild(div);
+      });
+    })
+    .catch(function() { productAcList.innerHTML = '<div class="ac-loading">Could not reach Open Food Facts — check your connection</div>'; });
+}
+
+// ── Analyze buttons ────────────────────────────────────────
+document.getElementById('analyze-meal-btn').addEventListener('click', function() {
+  if (!selectedMeal) return;
+  if (!avoidList.length) { alert('Please add at least one ingredient to avoid first.'); return; }
+  showLoading(selectedMeal.strMeal);
+  fetch('https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + selectedMeal.idMeal)
     .then(function(r) { return r.json(); })
     .then(function(data) {
       if (!data.meals || !data.meals.length) throw new Error('Meal details not found');
-      var full = data.meals[0];
-      var ingredients = extractIngredients(full);
-      var result = flagIngredients(full, ingredients);
+      var meal = data.meals[0];
+      var ingredients = extractMealIngredients(meal);
+      var result = buildResult(
+        meal.strMeal, ingredients, 'mealdb',
+        meal.strMealThumb || '',
+        (meal.strCategory ? meal.strCategory : '') + (meal.strArea ? ' · ' + meal.strArea + ' cuisine' : ''),
+        meal.strSource || '', meal.strYoutube || ''
+      );
       renderResults(result);
       addToHistory(result);
     })
-    .catch(function(err) {
-      document.getElementById('results-container').innerHTML =
-        '<div class="card"><div class="error-box"><strong>Could not load recipe:</strong> ' + escHtml(err.message) + '</div></div>';
-    });
-}
+    .catch(function(err) { showError(err.message); });
+});
 
-function extractIngredients(meal) {
+document.getElementById('analyze-product-btn').addEventListener('click', function() {
+  if (!selectedProduct) return;
+  if (!avoidList.length) { alert('Please add at least one ingredient to avoid first.'); return; }
+  var name = selectedProduct.product_name + (selectedProduct.brands ? ' (' + selectedProduct.brands + ')' : '');
+  showLoading(name);
+  var rawText = selectedProduct.ingredients_text || '';
+  var ingredients = parseManualIngredients(rawText);
+  if (!ingredients.length) {
+    showError('This product has no ingredient data in Open Food Facts. Try the "Paste ingredients" tab instead.');
+    return;
+  }
+  var result = buildResult(
+    name, ingredients, 'off',
+    selectedProduct.image_thumb_url || '', '', '', ''
+  );
+  renderResults(result);
+  addToHistory(result);
+});
+
+document.getElementById('analyze-manual-btn').addEventListener('click', function() {
+  if (!avoidList.length) { alert('Please add at least one ingredient to avoid first.'); return; }
+  var raw = document.getElementById('manual-ingredients').value.trim();
+  if (!raw) { alert('Please paste an ingredients list first.'); return; }
+  var name = document.getElementById('manual-name').value.trim() || 'Custom ingredient list';
+  var ingredients = parseManualIngredients(raw);
+  if (!ingredients.length) { alert('Could not find any ingredients in what you pasted. Please check the format.'); return; }
+  var result = buildResult(name, ingredients, 'manual', '', '', '', '');
+  renderResults(result);
+  addToHistory(result);
+});
+
+// ── Ingredient extraction ──────────────────────────────────
+function extractMealIngredients(meal) {
   var list = [];
   for (var i = 1; i <= 20; i++) {
     var ing = (meal['strIngredient' + i] || '').trim();
@@ -571,140 +504,118 @@ function extractIngredients(meal) {
   return list;
 }
 
-function flagIngredients(meal, ingredients) {
-  // For each avoided item, check if it appears in any ingredient name
-  // Also handle common category expansions
-  var expansions = {
-    'dairy':    ['milk','cream','butter','cheese','yogurt','yoghurt','creme','fromage','ghee','whey','lactose','ricotta','mozzarella','parmesan','cheddar','brie','gouda','sour cream','ice cream','custard'],
-    'gluten':   ['flour','bread','breadcrumb','wheat','barley','rye','semolina','spelt','couscous','soy sauce','malt','beer','pasta','noodle','cracker','biscuit'],
-    'nuts':     ['nut','almond','cashew','walnut','pecan','pistachio','hazelnut','macadamia','brazil nut','pine nut','chestnut','peanut','groundnut'],
-    'peanuts':  ['peanut','groundnut'],
-    'eggs':     ['egg','mayonnaise','mayo'],
-    'shellfish':['prawn','shrimp','crab','lobster','crayfish','scallop','oyster','clam','mussel','squid','octopus'],
-    'fish':     ['fish','salmon','tuna','cod','anchovy','sardine','mackerel','tilapia','halibut','bass','trout','herring'],
-    'soy':      ['soy','soya','tofu','miso','tempeh','edamame','soy sauce','tamari'],
-    'sesame':   ['sesame','tahini'],
-    'mustard':  ['mustard'],
-    'celery':   ['celery','celeriac'],
-    'lupin':    ['lupin','lupine'],
-    'sulphites':['wine','vinegar','dried fruit','sulfite','sulphite']
-  };
+function parseManualIngredients(text) {
+  // Split on newlines, commas, semicolons, or bullet-style markers
+  var parts = text.split(/[\n,;•·\-]+/);
+  var list = [];
+  parts.forEach(function(part) {
+    // Strip leading numbers, quantities, parenthetical notes
+    var clean = part.replace(/^\s*[\d½¼¾⅓⅔]+[\s./]*\w*\s*/,'').trim();
+    clean = clean.replace(/\(.*?\)/g, '').trim();
+    if (clean.length > 1) {
+      list.push({ name: clean.toLowerCase(), display: part.trim() });
+    }
+  });
+  return list;
+}
 
+// ── Flag logic ─────────────────────────────────────────────
+function buildResult(name, ingredients, source, thumb, meta, sourceUrl, youtubeUrl) {
   var flagged = [];
-  var safe = true;
-
   avoidList.forEach(function(avoided) {
     var terms = [avoided];
-    // add expansion terms if this avoid item is a category
     if (expansions[avoided]) terms = terms.concat(expansions[avoided]);
-
     ingredients.forEach(function(ing) {
-      var hit = terms.some(function(term) {
-        return ing.name.indexOf(term) !== -1;
-      });
+      var hit = terms.some(function(term) { return ing.name.indexOf(term) !== -1; });
       if (hit) {
-        // avoid duplicates
         var already = flagged.some(function(f) { return f.display === ing.display; });
-        if (!already) { flagged.push({ display: ing.display, avoided: avoided }); safe = false; }
+        if (!already) flagged.push({ display: ing.display, avoided: avoided });
       }
     });
   });
-
   return {
-    food_name:   meal.strMeal,
-    category:    meal.strCategory || '',
-    area:        meal.strArea || '',
-    thumb:       meal.strMealThumb || '',
-    source:      meal.strSource || '',
-    youtube:     meal.strYoutube || '',
+    food_name:   name,
     ingredients: ingredients,
     flagged:     flagged,
-    safe:        safe
+    safe:        flagged.length === 0,
+    source:      source,
+    thumb:       thumb,
+    meta:        meta,
+    sourceUrl:   sourceUrl,
+    youtubeUrl:  youtubeUrl
   };
 }
 
-// ── Render ────────────────────────────────────────────────
+// ── Render results ─────────────────────────────────────────
 function renderResults(r) {
   var container = document.getElementById('results-container');
-  var flaggedNames = r.flagged.map(function(f) { return f.display.toLowerCase(); });
+  var flaggedDisplays = r.flagged.map(function(f) { return f.display.toLowerCase(); });
 
-  // Meta line
-  var metaParts = [];
-  if (r.category) metaParts.push(r.category);
-  if (r.area) metaParts.push(r.area + ' cuisine');
-  if (r.source) metaParts.push('<a href="' + escHtml(r.source) + '" target="_blank">original recipe</a>');
-  if (r.youtube) metaParts.push('<a href="' + escHtml(r.youtube) + '" target="_blank">watch video</a>');
+  var sourceLabels = { mealdb: 'TheMealDB', off: 'Open Food Facts', manual: 'Manual entry' };
+  var sourceBadgeClass = { mealdb: 'badge-mealdb', off: 'badge-off', manual: 'badge-manual' };
 
-  // Flag summary
+  var metaHTML = '<span class="result-source-badge ' + (sourceBadgeClass[r.source] || '') + '">'
+    + (sourceLabels[r.source] || '') + '</span>';
+  if (r.meta) metaHTML += '<span>' + escHtml(r.meta) + '</span>';
+  var links = [];
+  if (r.sourceUrl) links.push('<a href="' + escHtml(r.sourceUrl) + '" target="_blank">original recipe</a>');
+  if (r.youtubeUrl) links.push('<a href="' + escHtml(r.youtubeUrl) + '" target="_blank">watch video</a>');
+  if (links.length) metaHTML += ' &middot; ' + links.join(' &middot; ');
+
   var alertHTML = '';
   if (r.safe) {
     alertHTML = '<div class="alert-box alert-safe">'
       + '<div class="alert-head"><div class="alert-dot" style="background:#40B870;"></div>'
       + '<span class="alert-label" style="color:var(--safe-txt);">No flags found</span></div>'
-      + '<p style="font-size:0.9rem;color:var(--safe-txt);font-weight:600;">&#10003; None of your avoided ingredients were found in this dish.</p>'
+      + '<p style="font-size:0.9rem;color:var(--safe-txt);font-weight:600;">&#10003; None of your avoided ingredients were found.</p>'
       + '</div>';
   } else {
-    // Group flagged by avoided category
-    var byCategory = {};
-    r.flagged.forEach(function(f) {
-      if (!byCategory[f.avoided]) byCategory[f.avoided] = [];
-      byCategory[f.avoided].push(f.display);
-    });
     alertHTML = '<div class="alert-box alert-danger">'
       + '<div class="alert-head"><div class="alert-dot" style="background:#D64030;"></div>'
       + '<span class="alert-label" style="color:var(--danger-txt);">Avoided ingredients found</span></div>'
       + '<div class="chips">'
-      + r.flagged.map(function(f) {
-          return '<span class="chip chip-danger">' + escHtml(f.display) + '</span>';
-        }).join('')
+      + r.flagged.map(function(f) { return '<span class="chip chip-danger">' + escHtml(f.display) + ' <small style="opacity:0.7;">(avoiding: ' + escHtml(f.avoided) + ')</small></span>'; }).join('')
       + '</div></div>';
   }
 
-  // All ingredients
-  var allIngHTML = r.ingredients.map(function(ing) {
-    var fl = flaggedNames.some(function(fn) { return fn === ing.display.toLowerCase(); });
+  var ingHTML = r.ingredients.map(function(ing) {
+    var fl = flaggedDisplays.some(function(fd) { return fd === ing.display.toLowerCase(); });
     return '<span class="ing-chip' + (fl ? ' flagged' : '') + '">' + escHtml(ing.display) + (fl ? ' ⚑' : '') + '</span>';
   }).join('');
 
   container.innerHTML = '<div class="card">'
-    + (r.thumb ? '<img class="result-thumb" src="' + escHtml(r.thumb) + '" alt="' + escHtml(r.food_name) + '" />' : '')
+    + (r.thumb ? '<img class="result-thumb" src="' + escHtml(r.thumb) + '" alt="' + escHtml(r.food_name) + '" onerror="this.style.display=\'none\'" />' : '')
     + '<div class="result-name">' + escHtml(r.food_name) + '</div>'
-    + (metaParts.length ? '<div class="result-meta" style="margin-bottom:1rem;">' + metaParts.join(' &middot; ') + '</div>' : '')
+    + '<div class="result-meta">' + metaHTML + '</div>'
     + alertHTML
-    + '<button class="ing-toggle" id="ing-toggle">Show all ingredients &#9660;</button>'
-    + '<div class="ing-section" id="ing-section">'
-    + '<div class="ing-chips" style="margin-top:0.5rem;">' + allIngHTML + '</div>'
-    + '</div>'
-    + '<div class="disclaimer"><p><strong>Important:</strong> This tool checks TheMealDB\'s recipe data only. '
-    + 'Recipes vary by chef, restaurant, and region. '
+    + '<button class="ing-toggle" id="ing-toggle">Show all ' + r.ingredients.length + ' ingredients &#9660;</button>'
+    + '<div class="ing-section" id="ing-section"><div class="ing-chips" style="margin-top:0.5rem;">' + ingHTML + '</div></div>'
+    + '<div class="disclaimer"><p><strong>Important:</strong> This tool checks recipe and product data from TheMealDB and Open Food Facts. '
+    + 'Recipes vary by chef and region; product formulations change over time. '
     + '<strong>Not a substitute for reading labels, asking restaurant staff, or consulting a medical professional.</strong> '
     + 'Always verify with the food preparer if you have a serious allergy or medical need.</p></div>'
-    + '<button class="btn-secondary" id="new-check-btn">+ Check another dish</button>'
+    + '<button class="btn-secondary" id="new-check-btn">+ Check another food</button>'
     + '</div>';
 
   document.getElementById('ing-toggle').addEventListener('click', function() {
     var sec = document.getElementById('ing-section');
     var open = sec.classList.toggle('open');
-    this.innerHTML = open ? 'Hide ingredients &#9650;' : 'Show all ingredients &#9660;';
+    this.innerHTML = open ? 'Hide ingredients &#9650;' : ('Show all ' + r.ingredients.length + ' ingredients &#9660;');
   });
   document.getElementById('new-check-btn').addEventListener('click', function() {
     container.innerHTML = '';
-    document.getElementById('food-search').value = '';
+    document.getElementById('meal-search').value = '';
+    document.getElementById('product-search').value = '';
+    document.getElementById('manual-name').value = '';
+    document.getElementById('manual-ingredients').value = '';
     selectedMeal = null;
-    setAnalyzeBtn(false);
+    selectedProduct = null;
+    setBtn('analyze-meal-btn', false, 'Select a dish above to check');
+    setBtn('analyze-product-btn', false, 'Select a product above to check');
   });
 }
 
-function showLoading(name) {
-  document.getElementById('results-container').innerHTML =
-    '<div class="loading-card">'
-    + '<div class="loading-dots"><span></span><span></span><span></span></div>'
-    + '<div class="loading-title">Checking ' + escHtml(name) + '&hellip;</div>'
-    + '<div class="loading-sub">Loading recipe from TheMealDB</div>'
-    + '</div>';
-}
-
-// ── History ───────────────────────────────────────────────
+// ── History ────────────────────────────────────────────────
 function addToHistory(result) {
   searchHistory.unshift({ name: result.food_name, flags: result.flagged.length, result: result });
   if (searchHistory.length > 8) searchHistory.pop();
@@ -724,15 +635,57 @@ function renderHistory() {
       + (h.flags > 0
         ? '<span class="hist-flag">&#9873; ' + h.flags + ' ingredient' + (h.flags !== 1 ? 's' : '') + ' flagged</span>'
         : '<span class="hist-safe">&#10003; No flags</span>');
-    div.addEventListener('click', function() {
-      renderResults(h.result);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    div.addEventListener('click', function() { renderResults(h.result); window.scrollTo({ top: 0, behavior: 'smooth' }); });
     list.appendChild(div);
   });
 }
 
-// ── Utility ───────────────────────────────────────────────
+// ── Helpers ────────────────────────────────────────────────
+function showLoading(name) {
+  document.getElementById('results-container').innerHTML =
+    '<div class="loading-card"><div class="loading-dots"><span></span><span></span><span></span></div>'
+    + '<div class="loading-title">Checking ' + escHtml(name) + '&hellip;</div>'
+    + '<div class="loading-sub">Loading ingredient data&hellip;</div></div>';
+}
+
+function showError(msg) {
+  document.getElementById('results-container').innerHTML =
+    '<div class="card"><div class="error-box"><strong>Error:</strong> ' + escHtml(msg) + '</div></div>';
+}
+
+function setBtn(id, enabled, text) {
+  var btn = document.getElementById(id);
+  btn.disabled = !enabled;
+  btn.textContent = text;
+}
+
+function buildACItem(imgSrc, name, sub) {
+  var div = document.createElement('div');
+  div.className = 'ac-item';
+  var imgHTML = imgSrc
+    ? '<img class="ac-thumb" src="' + escHtml(imgSrc) + '" alt="" loading="lazy" onerror="this.style.display=\'none\'" />'
+    : '<div class="ac-thumb" style="background:var(--bg2);"></div>';
+  div.innerHTML = imgHTML
+    + '<span class="ac-name">' + escHtml(name) + '</span>'
+    + (sub ? '<span class="ac-source">' + escHtml(sub) + '</span>' : '');
+  return div;
+}
+
+function closeAC(list) { list.classList.remove('open'); list.innerHTML = ''; }
+
+function handleACKeys(e, list, setFocus) {
+  var items = list.querySelectorAll('.ac-item');
+  var cur = -1;
+  items.forEach(function(it, i) { if (it.classList.contains('focused')) cur = i; });
+  if (e.key === 'ArrowDown') { e.preventDefault(); cur = Math.min(cur + 1, items.length - 1); }
+  else if (e.key === 'ArrowUp') { e.preventDefault(); cur = Math.max(cur - 1, 0); }
+  else if (e.key === 'Enter') { if (items[cur]) { items[cur].click(); return; } }
+  else if (e.key === 'Escape') { closeAC(list); return; }
+  setFocus(cur);
+  items.forEach(function(it, i) { it.classList.toggle('focused', i === cur); });
+  if (items[cur]) items[cur].scrollIntoView({ block: 'nearest' });
+}
+
 function escHtml(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
